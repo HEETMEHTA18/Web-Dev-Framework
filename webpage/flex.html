@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *
+        {
+            background-color:light cyan;
+            text-align :center;
+        }
+        .header
+        {
+            flex: 1;
+            padding: 10px;
+            font-size: 2rem;
+            background-color:chocolate;
+        }
+        header section
+        {
+            flex: 1;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px;
+            
+        }
+        header
+        {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        article
+        {
+            zoom:0.8;
+            min-width: 300px;
+            max-width:fit-content;
+            flex-direction: row;
+            flex-wrap:wrap;
+        }
+            header section:hover
+            {
+                flex: 1;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                
+            }
+        section
+        {
+
+            background-color: lightblue;
+            width: 100%;
+            padding: 10px;
+            border: 10px;
+            display: block;
+            display:flex;
+        }
+        article:nth-last-of-type(2)
+        {
+            flex:2;
+        }
+        .new
+        {
+            background-color:lightskyblue;
+            flex-wrap: wrap;
+            overflow:hidden;
+        }
+        .content
+        {
+            text-align :center;
+        }
+        .content1
+        {
+            text-align :left;
+        }
+        .content2
+        {
+
+            text-align :right;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sample Flex Box</h1>
+        <section>
+            <article>
+                <h2>
+                    This the First Article 
+                </h2>
+            </article>
+            <article>
+                <h2>
+                    This the Second Article 
+                </h2>
+            </article>
+            <article>
+                <h2>
+                    This the Third  Article 
+                </h2>
+            </article>
+            <article>
+                <h2>
+                    This the Fourth  Article 
+                </h2>
+            </article>
+            <article>
+                <h2>
+                    This the Fifth Article 
+                </h2>
+            </article>
+
+        </section>
+        <section class ="new">
+            <h3>
+                Welcome to Charusat News 
+            </h3>
+        </section>
+    </header>
+    <th>
+    <tr>
+        <td class ="content">
+            <p>Latest News in the charusat is:.</p>
+        </td>
+    </tr>
+    <tr>
+        
+        <td class ="content1">
+            <p>Latest News in the charusat is:.</p>
+        </td>
+        
+        <td class ="content2">
+            <p>Latest News in the charusat is:.</p>
+        </td>
+
+    </tr>
+    </th>
+</body>
+</html>
