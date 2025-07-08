@@ -16,6 +16,12 @@
         body {
             text-align: center;
         }
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            background: linear-gradient(to right, #6e77f2, #d0d0d0);
+            padding: 10px 0;
+        }
     </style>
 </head>
 
@@ -159,7 +165,11 @@
     <footer>
         <p>&copy; 2023 Charusat. All rights reserved.</p>
     </footer>
-
+<div class="marquee-container">
+    <marquee behavior="scroll" direction="right">
+        <p>Welcome to Charusat University! Explore our programs, campus life, and more. Stay tuned for updates and events.</p>
+    </marquee>
+</div>
 
 </body>
 
