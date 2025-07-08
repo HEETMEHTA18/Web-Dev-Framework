@@ -3,82 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Profile Page</title>
     <style>
-        * {
-            background-color: rgb(169, 171, 171);
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eebcbc;
+            color: #140707;
+            padding: 20px;
+            margin: 0;
+        }   
+        h1 {
+            color: #2c3e50;
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            margin-top: 20px;
             text-align: center;
+            font-size: 0.9em;
+            color: #777;
         }
-        #1 {
-            background-color: chocolate;
-            padding: 10px;
+        footer p {
+            margin: 5px 0;
         }
-        #2 {
-            background-color: lightblue;
-            padding: 10px;
-            border: 2px solid black;
-            
+        footer a {
+            color: #3498db;
         }
-        #container {
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            grid-template-rows: repeat(1,1fr);
-            gap: 10px;
-            padding: 10px;
-            margin: 15px;
-            grid-auto-rows: minmax(150px,auto);
-            background-color: bisque;
+        footer a:hover {
+            text-decoration: underline;
+        }
+        b {
+            color: #2c3e50;
+        }
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto 20px;
+            bottom: 10px;
             position: relative;
-        }
-        div {
-            border: 2px solid;
-            border-radius: 4px;
-            padding: 1em;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .img
-        {   
-            padding: 10px;
-            margin:1px;
-            height:10px;
-            width:auto;
-            
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
-    <div id = "1">
-        <h1>DashBoard</h1>
-    </div>
-    <div id ="2">
-        <h2>My Profile</h2>
-            <img src="../webpage/icon.png" alt="No Profile">
-    </div>
-    <div id ="container">
-    <div> <h2>Home </h2>
-        <ol>
-        <h3>Menu</h3>
-        <h3></h3>
-        <h3>Menu</h3>
-        <h3>Menu</h3>
-        
-        
-        </ol>
-    </div>
-    <div><h2>center</h2></div>
-    <div><h2>right</h2></div>
-    <div><h2>left</h2></div>
-    <div><h2>right</h2></div>
-    <div><h2>right</h2></div>
-    <div><h2>left</h2></div>
-    <div><h2>right</h2></div>
-    <div><h2>right</h2></div>
-    </div>
-    <div>
-        Contact Us
-    </div>
+    <h1>Profile Page</h1>
     
+    <img src="../Charusat/icon.png" alt=""><p>Welcome 24CE064</p>  
+    
+    <p><b>Mehta Heet Hitesh</b></p>
+    <b>Email:heetmehta18125@gmail.com</b>
+    <p>Feel free to explore the features available on this page.</p>
+
+    <a href="Main.html">Visit website</a>
+    <p>For more information, please visit our <a href="https://www.charusat.ac.in">official website</a>.</p>
+    <footer>
+        <p>&copy; 2025 CHARUSAT. All rights reserved.</p>
+    </footer>
 </body>
 </html>
