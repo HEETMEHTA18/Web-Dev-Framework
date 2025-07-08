@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>www.charusat.ac.in</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
@@ -15,6 +15,12 @@
     <style>
         body {
             text-align: center;
+        }
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            background: linear-gradient(to right, #6e77f2, #d0d0d0);
+            padding: 10px 0;
         }
     </style>
 </head>
@@ -42,10 +48,13 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Feedback</a>
+                        <a class="nav-link" href="register.html">Register</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" aria-disabled="true">Campus life</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="login.html">Login</a>
                     </li>
                 </ul>
             </div>
@@ -156,7 +165,11 @@
     <footer>
         <p>&copy; 2023 Charusat. All rights reserved.</p>
     </footer>
-
+<div class="marquee-container">
+    <marquee behavior="scroll" direction="right">
+        <p>Welcome to Charusat University! Explore our programs, campus life, and more. Stay tuned for updates and events.</p>
+    </marquee>
+</div>
 
 </body>
 

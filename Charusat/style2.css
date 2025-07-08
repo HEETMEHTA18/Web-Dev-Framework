@@ -1,0 +1,120 @@
+/* style2.css with hover & focus animation */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.head h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+/* Input Field Styling */
+form .input {
+    display: flex;
+    align-items: center;
+    background: #ecf0f1;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    box-shadow: 0 0 0px transparent;
+}
+
+form .input:hover,
+form .input:focus-within {
+    border-color: #3498db;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.4);
+    transform: scale(1.02);
+}
+
+form .input i {
+    color: #2980b9;
+    margin-right: 10px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+form .input input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+form .input input::placeholder {
+    color: #888;
+    transition: all 0.3s ease;
+}
+
+form .input input:focus::placeholder {
+    color: transparent;
+}
+
+/* Button styling */
+.button {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.button button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2980b9;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button button:hover {
+    background-color: #1c5980;
+    transform: translateY(-2px);
+}
+
+/* Login link */
+.have-account {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.have-account a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.have-account a:hover {
+    color: #1c5980;
+    text-decoration: underline;
+}
