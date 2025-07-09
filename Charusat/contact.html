@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>3D Carousel Slider</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #111;
+      font-family: sans-serif;
+    }
+
+    .carousel-container {
+      width: 300px;
+      height: 300px;
+      perspective: 1000px;
+    }
+
+    .carousel {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: spin 20s linear infinite;
+    }
+
+    .carousel img {
+      position: absolute;
+      width: 250px;
+      height: 150px;
+      object-fit: cover;
+      left: 25px;
+      top: 75px;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+
+    .carousel img:nth-child(1) { transform: rotateY(0deg) translateZ(400px); }
+    .carousel img:nth-child(2) { transform: rotateY(60deg) translateZ(400px); }
+    .carousel img:nth-child(3) { transform: rotateY(120deg) translateZ(400px); }
+    .carousel img:nth-child(4) { transform: rotateY(180deg) translateZ(400px); }
+    .carousel img:nth-child(5) { transform: rotateY(240deg) translateZ(400px); }
+    .carousel img:nth-child(6) { transform: rotateY(300deg) translateZ(400px); }
+
+    @keyframes spin {
+      from { transform: rotateY(0deg); }
+      to { transform: rotateY(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="carousel-container">
+    <div class="carousel">
+      <img src="../Charusat/image.png" alt="Image 1" />
+      <img src="../Charusat/icon.png" alt="Image 2" />
+      <img src="../Charusat/image2slider.png" alt="Image 3" />
+      <img src="../Charusat/image31.jpeg" alt="Image 4" />
+      <img src="../Charusat/image3slider.png" alt="Image 5" />
+      <img src="../Charusat/image2slider.png" alt="Image 6" />
+    </div>
+  </div>
+</body>
+</html>
