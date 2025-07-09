@@ -16,7 +16,7 @@
         
         body {
             text-align: center;
-            background-color:lightblue;
+            background-color:rgb(230, 249, 255);
             color: #333;
             padding: 20px;
             margin: 0;
@@ -31,6 +31,7 @@
         marquee {
             font-size: 1.2em;
             color: #fff;
+            margin-bottom: -10px;
             font-weight: bold;
         }
         footer {
@@ -61,6 +62,7 @@
             margin-right: auto;
             border-radius: 50%;
             display: inline-block;
+            display:flex;
         }
         .header h1 {
             color: #333;
@@ -73,11 +75,12 @@
             background-color: #1e64ab;
         }
         .carousel-item img {
-            max-height:599px;
+            max-height:700px;
             object-fit: cover;
         }
         .carousel {
-            margin-bottom: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
         }
         .carousel-control-prev,
         .carousel-control-next
@@ -85,10 +88,20 @@
             width: 5%;
         }
         img {
-            max-width: 100%;
-            height: 100px;
+            max-width: 150%;
+            height: 100%;
+            margin-bottom:10px ;
             border-radius: 81x;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .headerlogo
+        {
+            
+            height: 99px;
+            margin-bottom:10px ;
+            border-radius: 81x;
+
+
         }
     </style>
 
@@ -96,8 +109,10 @@
 
 
 <body>
+<div class ="headerlogo">
+    <img src="../Charusat/image.png" alt="">
+</div>
 
-<img src="../Charusat/image.png" alt="">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -189,7 +204,7 @@
             education and research. It offers a wide range of undergraduate and postgraduate programs across various
             disciplines.</p>
         <br>
-        <video width="300" height="200" controls src="https://www.youtube.com/3974c14c-23ad-48c4-ac1e-6f6d4a7f9cb7"
+        <video width="300" height="200" controls src="https://www.youtube.com/watch?v=MBym3IPnPlE&t=3s"
             type="video/mp4">
             Your browser does not support the video tag.
 
