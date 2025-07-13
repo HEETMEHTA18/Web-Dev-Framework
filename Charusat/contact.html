@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>3D Carousel Slider</title>
+  <title>Contact Us </title>
   <style>
     * {
       box-sizing: border-box;
@@ -11,12 +11,17 @@
 
     body {
       margin: 0;
+      font-family: sans-serif;
+      background: #111;
+      color: white;
+    }
+
+  
+    .carousel-section {
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #111;
-      font-family: sans-serif;
     }
 
     .carousel-container {
@@ -55,18 +60,88 @@
       from { transform: rotateY(0deg); }
       to { transform: rotateY(360deg); }
     }
+
+    /* Form Section */
+    .form-section {
+      padding: 60px 20px;
+      background: #222;
+      text-align: center;
+    }
+
+    .form-section h2 {
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: #00f0ff;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input[type="text"] {
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color: white;
+    }
+
+    button[type="submit"] {
+      background-color: #28a745;
+    }
+
+    button[type="reset"] {
+      background-color: #dc3545;
+    }
+
+    button[type="button"] {
+      background-color: #007bff;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
   </style>
 </head>
 <body>
-  <div class="carousel-container">
-    <div class="carousel">
-      <img src="../Charusat/image.png" alt="Image 1" />
-      <img src="../Charusat/icon.png" alt="Image 2" />
-      <img src="../Charusat/image2slider.png" alt="Image 3" />
-      <img src="../Charusat/image31.jpeg" alt="Image 4" />
-      <img src="../Charusat/image3slider.png" alt="Image 5" />
-      <img src="../Charusat/image2slider.png" alt="Image 6" />
+
+  
+  <section class="carousel-section">
+    <div class="carousel-container">
+      <div class="carousel">
+        <img src="../Charusat/image.png" alt="Image 1" />
+        <img src="../Charusat/icon.png" alt="Image 2" />
+        <img src="../Charusat/image2slider.png" alt="Image 3" />
+        <img src="../Charusat/image31.jpeg" alt="Image 4" />
+        <img src="../Charusat/image3slider.png" alt="Image 5" />
+        <img src="../Charusat/image2slider.png" alt="Image 6" />
+      </div>
     </div>
-  </div>
+  </section>
+
+ 
+  <section class="form-section">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" name="message" placeholder="Enter your message here..." required />
+      <button type="submit">Submit</button>
+      <button type="button" onclick="window.location.href='index.html'">Home</button>
+      <p>Contact us at: <a href="mailto:support@charusat.ac.in">support@charusat.ac.in</a></p>
+
+    </form>
+  </section>
+
 </body>
 </html>
