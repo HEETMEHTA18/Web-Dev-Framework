@@ -12,10 +12,137 @@
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
     <style>
-        
+        body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background: #fafbfc;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 40px auto 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  padding: 32px 24px 24px 24px;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.tab {
+  background: none;
+  border: none;
+  padding: 10px 18px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.tab.active, .tab:hover {
+  background: #f0f4fa;
+  color: #1976d2;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background: #f5f8fa;
+  border-radius: 10px;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 260px;
+  transition: box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+
+.card img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+}
+
+.card-title {
+  background: #dde4eb;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.02rem;
+  padding: 12px 10px 8px 10px;
+  min-height: 56px;
+}
+
+.card-desc {
+  padding: 10px 10px 16px 10px;
+  font-size: 0.97rem;
+  color: #333;
+}
+
+.enquire-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 32px;
+  background: #ff6600;
+  color: #fff;
+  font-weight: 600;
+  padding: 16px 28px;
+  border-radius: 18px 18px 0 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.11);
+  font-size: 1.1rem;
+  cursor: pointer;
+  z-index: 100;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .container {
+    padding: 10px;
+  }
+  .enquire-btn {
+    right: 8px;
+    left: 8px;
+    bottom: 8px;
+    border-radius: 12px;
+    font-size: 1rem;
+    padding: 12px 0;
+  }
+}
+
         body {
             text-align: center;
-            background-color:rgb(230, 249, 255);
+            background-color: rgb(230, 249, 255);
             color: #333;
             padding: 20px;
             margin: 0;
@@ -27,12 +154,14 @@
             background: linear-gradient(to right, #6e77f2, #d0d0d0);
             padding: 10px 0;
         }
+
         marquee {
             font-size: 1.2em;
             color: #fff;
             margin-bottom: -10px;
             font-weight: bold;
         }
+
         footer {
             background-color: #13dfe9;
             color: white;
@@ -41,10 +170,12 @@
             bottom: 0;
             width: 100%;
         }
+
         footer p {
             margin: 0;
             font-size: 14px;
         }
+
         .header {
             background-color: #6dacea;
             padding: 20px;
@@ -53,6 +184,7 @@
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+
         header img {
             max-width: 100px;
             margin-bottom: 10px;
@@ -61,56 +193,550 @@
             margin-right: auto;
             border-radius: 50%;
             display: inline-block;
-            display:flex;
+            display: flex;
         }
+
         .header h1 {
             color: #333;
         }
+
         .header p {
             color: #666;
         }
+
         .navbar {
             margin-bottom: 20px;
             background-color: #1e64ab;
         }
+
         .carousel-item img {
-            max-height:700px;
+            max-height: 700px;
             object-fit: cover;
         }
+
         .carousel {
             margin-top: 20px;
             margin-bottom: 10px;
         }
+
         .carousel-control-prev,
-        .carousel-control-next
-        {
+        .carousel-control-next {
             width: 5%;
         }
+
         img {
             max-width: 150%;
             height: 100%;
-            margin-bottom:10px ;
+            margin-bottom: 10px;
             border-radius: 81x;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        .headerlogo
-        {
-            
-            height: 99px;
-            margin-bottom:10px ;
-            border-radius: 81x;
 
+        .headerlogo {
+
+            height: 99px;
+            margin-bottom: 10px;
+            border-radius: 81x;
+            background-color: #edf3ff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            
 
         }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+        }
+
+        .announcements-section {
+            padding: 40px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #f97316;
+            letter-spacing: 3px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .announcement {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .date-box {
+            width: 90px;
+            height: 110px;
+            border: 2px solid #007bff;
+            border-radius: 4px;
+            text-align: center;
+            margin-right: 25px;
+        }
+
+        .date-box .day {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .date-box .month,
+        .date-box .year {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .announcement-content {
+            flex: 1;
+        }
+
+        .announcement-content h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .location {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 4px 0 12px 0;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .buttons button {
+            background-color: #e11d48;
+            color: #fff;
+            padding: 8px 14px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .buttons button:hover {
+            background-color: #be123c;
+        }
+
+
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff;
+  color: #333;
+  padding: 2rem;
+}
+
+/* Section styling */
+.mission-vision-section {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+/* Subtitle */
+.subtitle {
+  color: #ff5722;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+/* Main heading */
+.main-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+/* Card container */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* Individual card */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 400px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Card heading */
+.card-title {
+  color: #0070c0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* Card text */
+.card-text {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.container my-5
+{
+    margin: 2rem auto;
+    max-width: 10px;
+    
+    width: 10%;
+    padding: 1rem;
+}
+.glance-section {
+  max-width: 1300px;
+  margin: 40px auto 0 auto;
+  text-align: center;
+}
+.glance-section h1 {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+}
+.videos-row {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.video-col {
+  flex: 1 1 350px;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+.video-col iframe {
+  display: block;
+  width: 100%;
+  height: 315px;
+  border: none;
+  border-radius: 12px;
+}
+
+/* Responsive for mobile */
+@media (max-width: 1200px) {
+  .videos-row {
+    gap: 16px;
+  }
+  .video-col {
+    max-width: 100%;
+  }
+}
+@media (max-width: 900px) {
+  .videos-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .video-col {
+    max-width: 100%;
+  }
+}
+        .site-footer {
+  background: #0576c1;
+  color: #fff;
+  font-family: 'Poppins', Arial, sans-serif;
+  padding-top: 32px;
+  position: relative;
+}
+
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto 0 auto;
+  padding: 0 24px 24px 24px;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.footer-col {
+  flex: 1 1 260px;
+  min-width: 220px;
+}
+
+.footer-col h5 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #eaf6ff;
+  font-size: 0.98rem;
+}
+
+.footer-list li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.footer-list a {
+  color: #eaf6ff;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+.footer-list a:hover {
+  color: #ffb700;
+}
+
+.footer-social {
+  margin-top: 16px;
+}
+.footer-social a {
+  display: inline-block;
+  margin-right: 8px;
+}
+.footer-social img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fff;
+  padding: 3px;
+}
+
+.footer-bottom {
+  background: #fff;
+  color: #0576c1;
+  font-size: 1rem;
+  text-align: center;
+  padding: 12px 0 8px 0;
+  border-top: 2px solid #eaf6ff;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-bottom .footer-links {
+  font-size: 0.95rem;
+  color: #0576c1;
+}
+.footer-bottom .footer-links a {
+  color: #0576c1;
+  text-decoration: underline;
+  margin: 0 3px;
+}
+.footer-bottom .footer-links a:hover {
+  color: #ff6600;
+}
+
+.enquire-btn-fixed {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 100;
+  background: #ff6600;
+  color: #fff;
+  border-radius: 16px 16px 0 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.11);
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 12px 22px;
+}
+.enquire-btn-fixed a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .footer-main {
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 8px 24px 8px;
+  }
+  .footer-col {
+    min-width: 0;
+  }
+  .footer-col h5 {
+    font-size: 1.1rem;
+  }
+
+
+  .site-footer {
+  background: #0576c1;
+  color: #fff;
+  font-family: 'Poppins', Arial, sans-serif;
+  padding-top: 32px;
+  position: relative;
+}
+
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto 0 auto;
+  padding: 0 24px 24px 24px;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.footer-col {
+  flex: 1 1 260px;
+  min-width: 220px;
+}
+
+.footer-col h5 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #eaf6ff;
+  font-size: 0.98rem;
+}
+
+.footer-list li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.footer-list a {
+  color: #eaf6ff;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+.footer-list a:hover {
+  color: #ffb700;
+}
+
+.footer-social {
+  margin-top: 16px;
+}
+.footer-social a {
+  display: inline-block;
+  margin-right: 8px;
+}
+.footer-social img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fff;
+  padding: 3px;
+}
+
+.footer-bottom {
+  background: #fff;
+  color: #0576c1;
+  font-size: 1rem;
+  text-align: center;
+  padding: 12px 0 8px 0;
+  border-top: 2px solid #eaf6ff;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-bottom .footer-links {
+  font-size: 0.95rem;
+  color: #0576c1;
+}
+.footer-bottom .footer-links a {
+  color: #0576c1;
+  text-decoration: underline;
+  margin: 0 3px;
+}
+.footer-bottom .footer-links a:hover {
+  color: #ff6600;
+}
+
+.enquire-btn-fixed {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 100;
+  background: #ff6600;
+  color: #fff;
+  border-radius: 16px 16px 0 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.11);
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 12px 22px;
+}
+.enquire-btn-fixed a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .footer-main {
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 8px 24px 8px;
+  }
+  .footer-col {
+    min-width: 0;
+  }
+  .enquire-btn-fixed {
+    right: 8px;
+    left: 8px;
+    bottom: 8px;
+    border-radius: 12px;
+    font-size: 1rem;
+    padding: 10px 0;
+    text-align: center;
+  }
+}
+    
+}
+
+
     </style>
 
 </head>
 
 
 <body>
-<div class ="headerlogo">
-    <img src="../Charusat/image.png" alt="">
-</div>
+    <div class="headerlogo">
+        <img src="../Charusat/image.png" alt="">
+    </div>
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
@@ -203,21 +829,22 @@
             education and research. It offers a wide range of undergraduate and postgraduate programs across various
             disciplines.</p>
         <br>
-        <video width="300" height="200" controls src="https://www.youtube.com/watch?v=MBym3IPnPlE&t=3s"
-            type="video/mp4">
-            Your browser does not support the video tag.
-
-        </video>
-        <video width="300" height="200" controls src="https://www.youtube.com/3974c14c-23ad-48c4-ac1e-6f6d4a7f9cb7"
-            type="video/mp4">
-            Your browser does not support the video tag.
-
-        </video>
-        <video width="300" height="200" controls src="https://www.youtube.com/3974c14c-23ad-48c4-ac1e-6f6d4a7f9cb7"
-            type="video/mp4">
-            Your browser does not support the video tag.
-
-        </video>
+        <div class="container my-5">
+  <h4>Explore CHARUSAT </h4>
+<section class="glance-section">
+  <h1>CHARUSAT At Glance</h1>
+  <div class="videos-row">
+    <div class="video-col">
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/MBym3IPnPlE" title="CHARUSAT Conglomerate Film" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="video-col">
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/MBym3IPnPlE" title="CHARUSAT I A Legacy of 25 Years" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="video-col">
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/MBym3IPnPlE" title="CHARUSAT Third Video" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
         <h2>Don't Miss The Day</h2>
         <br>
         <h3>Announcements</h3>
@@ -283,23 +910,214 @@
                         </ul>
                     </div>
                 </div>
-            </section>
-            <!-- About CHARUSAT Section End -->
-            <div>
+        </div>
 
+        <div class="announcements-section">
+            <div class="section-subtitle">DON’T MISS THE DAY</div>
+            <div class="section-title">Announcements</div>
+
+            <!-- Announcement 1 -->
+            <div class="announcement">
+                <div class="date-box">
+                    <div class="day">02</div>
+                    <div class="month">June</div>
+                    <div class="year">2025</div>
+                </div>
+                <div class="announcement-content">
+                    <h3>ADVERTISEMENT FOR FIELD INVESTIGATOR AND RESEARCH ASSISTANT/ASSOCIATE</h3>
+                    <div class="location">📍 CHARUSAT</div>
+                    <div class="buttons">
+                        <button>Get Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Announcement 2 -->
+            <div class="announcement">
+                <div class="date-box">
+                    <div class="day">02</div>
+                    <div class="month">June</div>
+                    <div class="year">2025</div>
+                </div>
+                <div class="announcement-content">
+                    <h3>PhD Admission 2025 (August Intake)</h3>
+                    <div class="location">📍 CHARUSAT</div>
+                    <div class="buttons">
+                        <button>PhD Advertisement 2025</button>
+                        <button>Apply Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Announcement 3 -->
+            <div class="announcement">
+                <div class="date-box">
+                    <div class="day">08</div>
+                    <div class="month">July</div>
+                    <div class="year">2025</div>
+                </div>
+                <div class="announcement-content">
+                    <h3>National-level hands-on training program on "Animal Cell Culture and Cytotoxicity Assay"</h3>
+                    <div class="location">📍 PDPIAS, CHARUSAT</div>
+                    <div class="buttons">
+                        <button>Get Details</button>
+                    </div>
+                </div>
             </div>
         </div>
+        <section class="mission-vision-section">
+            <p class="subtitle">HIGHLY CHERISHED BY STUDENTS WORLDWIDE</p>
+            <h1 class="main-heading">Mission and Vision</h1>
+
+            <div class="cards-container">
+                <div class="card">
+                    <h2 class="card-title">Vision</h2>
+                    <p class="card-text">
+                        To become dynamic global institution in a knowledge driven world through excellence in teaching,
+                        research and social contribution.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+        <div class="container">
+    <h1 class="title">Faculties</h1>
+    <div class="tabs">
+      <button class="tab active">All</button>
+      <button class="tab">Engineering</button>
+      <button class="tab">Pharmacy</button>
+      <button class="tab">Computer Science and Application</button>
+      <button class="tab">Management Studies</button>
+      <button class="tab">Sciences</button>
+      <button class="tab">Medical Sciences</button>
+      <button class="tab">Humanities</button>
+    </div>
+    <div class="grid">
+      <!-- Card 1 -->
+      <div class="card">
+        <img src="cspit.jpeg" alt="CSPIT">
+        <div class="card-title">Chandubhai S. Patel Institute of Technology (CSPIT)</div>
+        <div class="card-desc">B. Tech, M. Tech, PG Diploma(PGDEAMT), Ph. D.</div>
+      </div>
+      <!-- Card 2 -->
+      <div class="card">
+        <img src="depstaar.jpeg" alt="DEPSTAR">
+        <div class="card-title">Devang Patel Institute of Advance Technology and Research (DEPSTAR)</div>
+        <div class="card-desc">B. Tech</div>
+      </div>
+      <!-- Card 3 -->
+      <div class="card">
+        <img src="rpcp.jpeg" alt="RPCP">
+        <div class="card-title">Ramanbhai Patel College of Pharmacy (RPCP)</div>
+        <div class="card-desc">B. Pharm, M. Pharm., Ph. D.</div>
+      </div>
+      <!-- Card 4 -->
+      <div class="card">
+        <img src="cmpics.jpeg" alt="CMPICA">
+        <div class="card-title">Smt. Chandaben Mohanbhai Patel Institute of Computer Application (CMPICA)</div>
+        <div class="card-desc">BCA,B.Sc(IT), MCA,M.Sc(IT), Ph. D.</div>
+      </div>
+      <!-- Card 5 -->
+      <div class="card">
+        <img src="i2im.jpeg" alt="I2IM">
+        <div class="card-title">Indukaka Ipcowala Institute of Management (I2IM)</div>
+        <div class="card-desc">BBA, BA (English), Library Science, MBA, Ph. D.</div>
+      </div>
+      <!-- Card 6 -->
+      <div class="card">
+        <img src="pdpias.jpeg" alt="PDPIAS">
+        <div class="card-title">P. D. Patel Institute of Applied Sciences (PDPIAS)</div>
+        <div class="card-desc">B. Sc., PG Diploma(Data Science), M. Sc., Ph. D.</div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="enquire-btn">
+    <a href="login.html" style="color: rgb(3, 2, 2); text-decoration: none;">Enquire
+        Now - UG/PG/Phd Admission 2025
+    </a>
+    
+  </div>
 
 
-        <footer>
-            <p>&copy; 2025 Charusat. All rights reserved.</p>
-        </footer>
-        <div class="marquee-container">
-            <marquee behavior="scroll" direction="right">
-                <p>Welcome to Charusat University! Explore our programs, campus life, and more. Stay tuned for updates
-                    and events.</p>
-            </marquee>
+
+
+
+        <div class="text-center my-5">
+            <h2>Explore More About CHARUSAT</h2>
+            <p>Discover our programs, campus life, and research initiatives.</p>
+            <a href="https://www.charusat.ac.in" class="btn btn-primary">Visit CHARUSAT Website</a>
         </div>
+
+
+
+        </section>
+        <!-- About CHARUSAT Section End -->
+        <div>
+
+        </div>
+    </div>
+
+
+    <footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-col contact">
+      <h5>Contact</h5>
+      <ul class="footer-list">
+        <li>
+          <span>📍</span> Charotar University of Science and Technology,<br>
+          CHARUSAT Campus,<br>
+          Off. Nadiad-Petlad Highway, Changa-388421
+        </li>
+        <li><span>📞</span> +91 2697 265011/21</li>
+        <li><span>✉️</span> info@charusat.ac.in</li>
+        <li><span>🕒</span> Mon - Sat: 09:00 AM – 4:30 PM<br>
+          <small>(Except Public Holidays and 2<sup>nd</sup> & 4<sup>th</sup> Saturdays)</small>
+        </li>
+        <li><a href="#">How to Reach us ?</a></li>
+      </ul>
+    </div>
+    <div class="footer-col quick-links">
+      <h5>Quick Links</h5>
+      <ul class="footer-list">
+        <li><a href="#">Exam Result</a></li>
+        <li><a href="#">Pay Fees</a></li>
+        <li><a href="#">Downloads</a></li>
+        <li><a href="#">Alumni Portal</a></li>
+        <li><a href="#">Donations</a></li>
+        <li><a href="#">Policies and Procedures - Support Facilities</a></li>
+        <li><a href="#">UGC</a></li>
+      </ul>
+    </div>
+    <div class="footer-col misc">
+      <h5>Miscellaneous</h5>
+      <ul class="footer-list">
+        <li><a href="#">Academic Calendar</a></li>
+        <li><a href="#">Public Holidays</a></li>
+        <li><a href="#">Campus Map</a></li>
+        <li><a href="#">Code of Conduct</a></li>
+        <li><a href="#">NAD/ABC Videos -- 1 2 3 4</a></li>
+        <li><a href="#">Notifications</a></li>
+        <li><a href="#">UGC OL Application (BBA/BCA)</a></li>
+        <li><a href="#">UGC OL Application (MBA/MCA)</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 <b>CHARUSAT</b></span>
+    <span class="footer-links">
+      <a href="#">Mandatory Disclosure & Compliance</a> ||
+      <a href="#">Privacy Policy</a> ||
+      <a href="#">Disclaimer</a> ||
+      <a href="#">Terms of Use</a>
+    </span>
+  </div>
+</footer>
+    <div class="marquee-container">
+        <marquee behavior="scroll" direction="right">
+            <p>Thanks For Visiting Charusat!! Visit Again😊.Choose Charusat Choose Success</p>
+        </marquee>
+    </div>
 
 </body>
 
