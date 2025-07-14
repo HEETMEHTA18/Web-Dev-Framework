@@ -66,15 +66,7 @@ form .input input {
     color: #333;
     transition: all 0.3s ease;
 }
-
-form .input input::placeholder {
-    color: #888;
-    transition: all 0.3s ease;
-}
-
-form .input input:focus::placeholder {
-    color: transparent;
-}
+/
 
 /* Button styling */
 .button {
