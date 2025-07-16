@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .class1 {
+            border-style: solid;
+            border-width: 1px;
+            display: block;
+            border-color: black;
+            width: 300px;
+            height: 100px;
+            background-color: bisque;
+            margin: 20px auto;
+            
+            border-radius: 10px;
+            
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-family: Arial, sans-serif;
+            
+
+            transition: 
+            width 10s;
+            height: 10s;
+            background-color: 10s;
+            rotate:10s;
+            scale: 4s;
+            
+            text-align: center;
+            translate: 50px;
+            font-size: 16px;
+            scale: 1.5;
+            font-size: 20px;
+            animation-duration: 3s;
+            animation-name: spin;
+        }
+            @keyframes spin {
+                from {
+                    translate: 0 0;
+                    scale: 0%;
+                    rotate: 10deg;
+                }
+                to {
+                    translate:0 0 ;
+                    scale: 100% ;
+                    rotate: 360deg;
+                }
+             
+            
+        }
+        .class1:hover {
+            width: 500px;
+            height: 200px;
+            background-color: lightblue;
+            rotate:360deg;
+            
+        }
+        .hello {
+            font-size: 20px;
+            color: red;
+            font-weight: bold;
+            
+            transform: 
+            translateX(50px) translateY(50px);
+            transition: transform 2s;
+            animation: move 2s infinite alternate;
+
+                
+             }
+        @keyframes move {
+            from {
+                transform: translateX(0) translateY(0);
+            }
+            to {
+                transform: translateX(100px) translateY(100px);
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div class="class1">
+        <h1>Transition Page</h1>
+       
+        
+    </div>
+    <p class ="hello"> CHOOSE SUCCESS CHOOSE CHARUSAT</p>
+</body>
+</html>
