@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            text-align: center;
+            background-color: beige;
+        }
+        input:focus {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" placeholder="Num1" id="1">
+    <input type="text" placeholder="Num2" id="2" onblur="addfun();" />
+    <input type="text" placeholder="Add" id="3" onblur="addfun();" />
+    <!-- <button onclick="addfun()" value="Click">ENTER</button> -->
+    <script>
+        function addfun() {
+            var a = parseInt(document.getElementById('1').value);
+            var b = parseInt(document.getElementById('2').value);
+            document.getElementById('3').value = a + b;
+
+            document.getElementById('p1').innerHTML = "FORM SUBMITEDS ";
+        }
+        addfun();
+
+    </script>
+
+    <p id="p1">
+        This is static
+    </p>
+</body>
+
+</html>
