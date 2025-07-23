@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<link rel="stylesheet" href="style2.css">
+</head>
+<script>
+    function validateForm() {
+        let isValid = true;
+        const fullName = document.getElementById("fullName").value;
+        const studentId = document.getElementById("studentId").value;
+        const email = document.getElementById("email").value;
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirmPassword").value;
+        const phone = document.getElementById("phone").value;
+
+        // Clear previous error messages
+        document.querySelectorAll('.error').forEach(el => el.textContent = '');
+
+        if (!fullName) {
+            document.getElementById("fullNameError").textContent = "Full Name is required.";
+            isValid = false;
+        }
+        if (!studentId) {
+            document.getElementById("studentIdError").textContent = "Student ID is required.";
+            isValid = false;
+        }
+        if (!email) {
+            document.getElementById("emailError").textContent = "Email is required.";
+            isValid = false;
+        }
+        if (!username) {
+            document.getElementById("usernameError").textContent = "Username is required.";
+            isValid = false;
+        }
+        if (!password) {
+            document.getElementById("passwordError").textContent = "Password is required.";
+            isValid = false;
+        }
+        if (password !== confirmPassword) {
+            document.getElementById("confirmPasswordError").textContent = "Passwords do not match.";
+            isValid = false;
+        }
+        if (!phone) {
+            document.getElementById("phoneError").textContent = "Phone No. is required.";
+            isValid = false;
+        }
+
+        if (isValid) {
+            displayData();
+        }
+        
+        return false; 
+    }
+    
+</script>
+<body>
+
+<h2>Registration Form</h2>
+<form id="registrationForm" onsubmit="return validateForm()">
+    <div class="form-group">
+        <label for="fullName">Student Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required>
+        <span class="error" id="fullNameError"></span>
+    </div>
+    <div class="form-group">
+        <label for="studentId">Student ID:</label>
+        <input type="text" id="studentId" name="studentId" required>
+        <span class="error" id="studentIdError"></span>
+    </div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <span class="error" id="emailError"></span>
+    </div>
+    <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <span class="error" id="usernameError"></span>
+    </div>
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <span class="error" id="passwordError"></span>
+    </div>
+    <div class="form-group">
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+        <span class="error" id="confirmPasswordError"></span>
+    </div>
+    <div class="form-group">
+        <label for="phone">Phone No.:</label>
+        <input type="text" id="phone" name="phone" required>
+        <span class="error" id="phoneError"></span>
+    </div>
+    <button type="submit">Register</button>
+</form>
+
+<div id="displayData" class="hidden">
+    <h3>Registration Successful!</h3>
+    <p><strong>Full Name:</strong> <span id="displayFullName"></span></p>
+    <p><strong>Student ID:</strong> <span id="displayStudentId"></span></p>
+    <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+    <p><strong>Username:</strong> <span id="displayUsername"></span></p>
+    <p><strong>Phone No.:</strong> <span id="displayPhone"></span></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
