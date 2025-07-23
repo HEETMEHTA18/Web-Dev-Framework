@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Form Validation</h2>
+        <p id ='p'></p>
+        <input type="text" id="fullName" placeholder="Full Name">
+        <input type="text" id="studentId" placeholder="Student ID">
+
+        <input type="email" id="email" placeholder="Email">
+
+        <input type="text" id="username" placeholder="Username">
+
+
+        <input type="password" id="password" placeholder="Password">
+
+
+        <input type="password" id="confirmPassword" placeholder="Confirm Password">
+        <input type="text" id="phone" placeholder="Phone No.">
+        <button onclick="validateForm()">Submit</button>
+        <p id="fullNameError" class="error"></p>
+        <p id="studentIdError" class="error"></p>
+        <p id="emailError" class="error"></p>
+        <p id="usernameError" class="error"></p>
+        <p id="passwordError" class="error"></p>
+        <p id="confirmPasswordError" class="error"></p>
+        <p id="phoneError" class="error"></p>
+        <p id="output"></p>
+        <script src="script.js">
+            function validateForm() {
+                var fullName = document.getElementById("fullName").value;
+                var studentId = document.getElementById("studentId").value; 
+                var email = document.getElementById("email").value;
+                var username = document.getElementById("username").value;
+                var password = document.getElementById("password").value;
+                var confirmPassword = document.getElementById("confirmPassword").value;
+                var phone = document.getElementById("phone").value;
+                    // Clear previous error messages
+                    var email =/^[^\s@]+@[^\s@]+\.[^\s@]+\.[ac.in]+$/;
+                var errorMessage = "";
+                if (fullName === "") {
+                    errorMessage += "Full Name is required.<br>";
+                }
+                if (studentId === "") {
+                    errorMessage += "Student ID is required.<br>";
+                }
+                if (email === "") {
+                    errorMessage += "Email is required.<br>";
+                }   
+                if (username === "") {
+                    errorMessage += "Email is required.<br>";
+                }
+                
+                if (password === "") {
+                    errorMessage += "Password is required.<br>";
+                }
+                if (confirmPassword === "") {
+                    errorMessage += "Confirm Password is required.<br>";
+                }
+                if (password !== confirmPassword) {
+                    errorMessage += "Passwords do not match.<br>";
+                }
+                if (phone === "") {
+                    errorMessage += "Phone No. is required.<br>";
+                }
+                if (errorMessage !== "") {
+                    document.getElementById("p").innerHTML = errorMessage;
+                } else {
+                    document.getElementById("p").innerHTML = "Form submitted successfully!";
+                }   
+                return false; // Prevent form submission for demonstration purposes
+            }
+        </script>
+
+</body>
+</html>
