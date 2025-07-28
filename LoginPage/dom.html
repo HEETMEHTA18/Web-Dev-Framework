@@ -2,13 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
-    <title>Document Object Model</title>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
     
+    <h3 id = "Btn">Today date is :</h3>
+    <button>
+        <h4 id = "Button">Click ME </h4>
+        </button>
+        <script>
+    const h3 = document.getElementById('Btn');
+    const h4 = document.getElementById('Button');
 
+    h4.addEventListener('click', function() {
+        
+        h3.textContent = `Today's Date Is ${Date(Date.now)}`; 
+        
+    btn1.addEventListener('Click', ()=> {
+
+    const para = document.createElement('p');
+    
+    para.setAttribute('id','/p1');
+    para.textContent = "Saiyaraa";
+    document.body.appendChild(para);
+
+    
+    });
+}
+</script>
 </body>
 </html>

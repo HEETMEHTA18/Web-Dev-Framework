@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('password').addEventListener('blur', validatePassword);
     document.getElementById('confirmPassword').addEventListener('blur', validateConfirmPassword);
     document.getElementById('phone').addEventListener('blur', validatePhone);
-    
+    // document.registrationform.add("HEET MEHTA");
 });
 
 
