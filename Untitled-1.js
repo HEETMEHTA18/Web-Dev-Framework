@@ -16,11 +16,7 @@ let status1=[...details, "available"];
 
 
 console.log(status1); 
-console.log(status1); 
-
-
-
-
+console.log(status1);
 function myadd(...rest)
 {
     let sum=0;
