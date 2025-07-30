@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive JS UI Demo</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 20px;
+      background: #f0f2f5;
+      color: #333;
+    }
+
+    h2 {
+      color: #2c3e50;
+    }
+
+    form, div, section {
+      margin-bottom: 30px;
+    }
+
+    input[type="text"], input[type="email"] {
+      padding: 10px;
+      margin-right: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #2980b9;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #3498db;
+    }
+
+    #modal {
+      display: none;
+      background-color: #fff;
+      border: 1px solid #888;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      margin-top: 10px;
+    }
+
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: lightgray;
+      margin-top: 10px;
+      transition: all 0.5s ease-in-out;
+    }
+
+    hr {
+      border: 1px solid #ddd;
+    }
+
+    #data, #storedName {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #2e86de;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>JavaScript Feature Demo</h1>
+
+
+  <!-- 1. Form Validation -->
+  <h2>1. Form Validation</h2>
+  <form id="myForm">
+    Email: <input type="email" id="email" placeholder="example@example.com" />
+    <button type="submit">Submit</button>
+  </form>
+
+  <hr>
+
+  <!-- 2. Interactive UI - Modal -->
+  <h2>2. Interactive UI - Show/Hide Modal</h2>
+  <button onclick="toggleModal()">Toggle Modal</button>
+  <div id="modal">
+    <p>This is a Modal!</p>
+    <button onclick="toggleModal()">Close</button>
+  </div>
+
+  <hr>
+
+  <!-- 3. Dynamic Content Update -->
+  <h2>3. Dynamic Content Update</h2>
+  <button onclick="loadData()">Load Data</button>
+  <div id="data"></div>
+
+  <hr>
+
+  <!-- 4. Animation -->
+  <h2>4. Animation & Effects</h2>
+  <button onclick="animateBox()">Animate Box</button>
+  <div id="box"></div>
+
+  <hr>
+
+  <!-- 5. Event Handling -->
+  <h2>5. Event Handling</h2>
+  <input type="text" id="keyInput" placeholder="Type something..." />
+
+  <hr>
+
+  <!-- 6. Local Storage -->
+  <h2>6. Storing Data in Local Storage</h2>
+  <input type="text" id="username" placeholder="Enter your name" />
+  <button onclick="saveName()">Save Name</button>
+  <button onclick="loadName()">Load Name</button>
+  <p id="storedName"></p>
+  
+  <!-- JavaScript -->
+  <script>
+    // 1. Form Validation
+    document.getElementById("myForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      let email = document.getElementById("email").value;
+      if (email === "") {
+        alert("Email is required!");
+      } else {
+        alert("Form submitted successfully!");
+      }
+    });
+
+    // 2. Modal Toggle
+    function toggleModal() {
+      const modal = document.getElementById("modal");
+      modal.style.display = (modal.style.display === "none" || modal.style.display === "") ? "block" : "none";
+    }
+
+    // 3. Load Data
+    function loadData() {
+      const dataDiv = document.getElementById("data");
+      dataDiv.innerHTML = "Loading...";
+      setTimeout(() => {
+        dataDiv.innerHTML = " Data loaded dynamically!";
+      }, 1000);
+    }
+
+    // 4. Animate Box
+    function animateBox() {
+      const box = document.getElementById("box");
+      box.style.width = "300px";
+      box.style.height = "300px";
+      box.style.backgroundColor = "beige";
+    }
+
+    // 5. Event Handling
+    document.getElementById("keyInput").addEventListener("keyup", function(e) {
+      console.log("You typed: " + e.target.value);
+    });
+
+    // 6. Local Storage
+    function saveName() {
+      const name = document.getElementById("username").value;
+      localStorage.setItem("username", name);
+      alert("Name saved!");
+    }
+
+    function loadName() {
+      const name = localStorage.getItem("username");
+      document.getElementById("storedName").innerText = "Stored Name: " + (name || "No name saved");
+    }
+
+    // Additional JavaScript Features
+    // 7. String Manipulation
+    console.log("String Manipulation Examples:");
+    console.log("Hello, World!".toUpperCase()); // Convert to uppercase
+    console.log("Hello, World!".toLowerCase()); // Convert to lowercase 
+    console.log("Hello, World!".length); // Get length of string
+    console.log("Hello, World!".indexOf("World")); // Find index of substring
+    console.log("Hello, World!".replace("World", "JavaScript")); // Replace substring
+    console.log("Hello, World!".split(", ")); // Split string into array
+    //string
+    let name = "John Doe";
+    console.log(name);
+    console.log(`Hello, ${name}!`);
+    console .log(name.trim());
+    console .log(name.toUpperCase());
+    console .log(name.toLowerCase());
+    console .log(name.length);
+    console .log(name.indexOf("Doe"));
+    console .log(name.replace("John", "Jain"));
+    console .log(name.split(" "));
+    console .log(name.startsWith("John"));
+    console .log(name.endsWith("Doe"));
+    console .log(name.includes("John"));
+    console .log(name.charAt(0));
+    console .log(name.charCodeAt(0));
+    console .log(name.concat(" Smith"));
+    console .log(name.slice(0, 4));
+    console .log(name.substring(0, 4));
+    console.log(name.split(" "));
+    console.log(name.search("Doe"));                          
+    console.log(name.match(/Doe/));
+    console.log(name.localeCompare("Jane Doe"));
+    console.log(name.repeat(3));
+    console.log(name.toString());
+
+    //number
+    let num = 42;
+    console.log(num);
+
+  </script>
+</body>
+</html>

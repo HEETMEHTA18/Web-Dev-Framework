@@ -17,8 +17,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // document.registrationform.add("HEET MEHTA");
 });
 
+function submiteed() {
+     function saveName() { 
 
-// This new function handles the form submission
+ const name = document.getElementById("username").value; 
+
+ localStorage.setItem("username", name); 
+
+ alert("Name saved!"); 
+ loadName();} 
+
+ 
+
+function loadName() { 
+
+ const name = localStorage.getItem("username"); 
+
+document.getElementById("storedName").innerText = "Stored Name: " + (name || "No name saved"); 
+
+ } 
+}
+
 function handleFormSubmit(event) {
     // This is the most important line: it stops the page from reloading
     event.preventDefault();
