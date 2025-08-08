@@ -43,7 +43,7 @@ if ($human == 3) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Rock Paper Scissors Game</title>
+    <title>f6789b89 - Rock Paper Scissors</title>
 </head>
 <body>
     <h1>Rock Paper Scissors</h1>
