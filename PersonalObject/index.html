@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Person Object</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef2f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .person-card {
+      background-color: #fff;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      width: 320px;
+    }
+
+    .person-card h2 {
+      color: #2c3e50;
+      margin-bottom: 15px;
+    }
+
+    .person-card p {
+      margin: 8px 0;
+      font-size: 16px;
+    }
+
+    .person-card strong {
+      color: #34495e;
+    }
+  </style>
+</head>
+<body>
+  <div class="person-card">
+    <h2 id="name"></h2>
+    <p><strong>ID:</strong> <span id="id"></span></p>
+    <p><strong>Age:</strong> <span id="age"></span></p>
+    <p><strong>Gender:</strong> <span id="gender"></span></p>
+    <p><strong>Email:</strong> <span id="email"></span></p>
+    <p><strong>Address:</strong> <span id="address"></span></p>
+  </div>
+
+  <script>
+    const person = {
+      id: "24CE064",
+      name: "HEET MEHTA",
+      age: 20,
+      gender: "Male",
+      email: "heet.mehta@example.com",
+      address: "Surat, Gujarat, India"
+    };
+
+    document.getElementById("name").textContent = person.name;
+    document.getElementById("id").textContent = person.id;
+    document.getElementById("age").textContent = person.age;
+    document.getElementById("gender").textContent = person.gender;
+    document.getElementById("email").textContent = person.email;
+    document.getElementById("address").textContent = person.address;
+  </script>
+</body>
+</html>
