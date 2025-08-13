@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Looping Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    h2 {
+      color: #333;
+    }
+    .loop-section {
+      background: #fff;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    ul {
+      list-style-type: square;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>JavaScript Loops with DOM & Console</h1>
+
+  <div class="loop-section">
+    <h2>For Loop</h2>
+    <ul id="for-loop"></ul>
+  </div>
+
+  <div class="loop-section">
+    <h2>While Loop</h2>
+    <ul id="while-loop"></ul>
+  </div>
+
+  <div class="loop-section">
+    <h2>Do...While Loop</h2>
+    <ul id="do-while-loop"></ul>
+  </div>
+
+  <div class="loop-section">
+    <h2>forEach Loop</h2>
+    <ul id="for-each-loop"></ul>
+  </div>
+
+  <script>
+    // FOR LOOP
+    console.log("=== FOR LOOP ===");
+    let forList = document.getElementById("for-loop");
+    for (let i = 1; i <= 5; i++) {
+      console.log("For Loop Iteration:", i);
+      let li = document.createElement("li");
+      li.textContent = `For Loop Count: ${i}`;
+      forList.appendChild(li);
+    }
+
+    // WHILE LOOP
+    console.log("=== WHILE LOOP ===");
+    let whileList = document.getElementById("while-loop");
+    let j = 1;
+    while (j <= 5) {
+      console.log("While Loop Iteration:", j);
+      let li = document.createElement("li");
+      li.textContent = `While Loop Count: ${j}`;
+      whileList.appendChild(li);
+      j++;
+    }
+
+    // DO...WHILE LOOP
+    console.log("=== DO...WHILE LOOP ===");
+    let doWhileList = document.getElementById("do-while-loop");
+    let k = 1;
+    do {
+      console.log("Do...While Loop Iteration:", k);
+      let li = document.createElement("li");
+      li.textContent = `Do...While Loop Count: ${k}`;
+      doWhileList.appendChild(li);
+      k++;
+    } while (k <= 5);
+
+    // FOREACH LOOP
+    console.log("=== FOREACH LOOP ===");
+    let forEachList = document.getElementById("for-each-loop");
+    let items = ["Apple", "Banana", "Cherry", "Mango", "Orange"];
+    items.forEach((fruit, index) => {
+      console.log(`forEach Loop Item ${index + 1}: ${fruit}`);
+      let li = document.createElement("li");
+      li.textContent = `Fruit: ${fruit}`;
+      forEachList.appendChild(li);
+    });
+  </script>
+
+</body>
+</html>
