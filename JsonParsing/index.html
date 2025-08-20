@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function addstudent() {
+            const name = document.getElementById('Name').value;
+            const age = document.getElementById('Age').value;
+            console.log(name, age);
+
+            if (name && age) {
+                const studentList = document.getElementById('studentList');
+                const li = document.createElement('li');
+                li.textContent = `Name: ${name}, Age: ${age}`;
+                studentList.appendChild(li);
+
+                
+                document.getElementById('Name').value = '';
+                document.getElementById('Age').value = '';
+            } else {
+                alert('Please fill in both fields.');
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const studentList = document.getElementById('studentList');
+            const students = JSON.parse(localStorage.getItem('students')) || [];
+
+            students.forEach(student => {
+                const li = document.createElement('li');
+                li.textContent = `Name: ${student.name}, Age: ${student.age}`;
+                studentList.appendChild(li);
+            });
+
+            document.querySelector('button[type="submit"]').addEventListener('click', function(event) {
+                event.preventDefault();
+                addstudent();
+            });
+        });
+        function showArrayMethod()
+        {
+            let number=[1,2,3];
+            number.push(3);
+            number.pop(11);
+            number.unshift(0);
+            number.shift();
+
+
+            let colors = ["Red", "Green", "Blue","Orange"];
+            let squared=[1,2,3,4].map(n=>n*n);
+            let adults=[12,34,56].filter(age=>age=>10);
+            let found = [2,10,34,345].find(num=>num>10);
+            let sum = [1,2,4,5,7].reduce((acc,val)=>val=>acc+val+0);
+            output.innerHTML="<h2>Array Method</h2>";
+            output.innerHTML="Number in the after pop ";
+        }
+        
+    </script>
+</head>
+<body>
+
+    <h1>Student DashBoard</h1>
+    <label for="Name">Name: 
+        <input type="text" id="Name" name="Name" placeholder="Enter your name" required><br>
+        <label for="Age">Age:</label>
+        <input type="text" id="Age" name="Age" placeholder="Enter your age" required>
+        <button type="submit" onsubmit="addstudent()">Submit</button>
+        
+    </label>
+    <h2>All students</h2>
+    <ul id="studentList">
+       
+        
+</body>
+</html>

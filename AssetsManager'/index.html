@@ -9,17 +9,18 @@
   <!-- React (CDN) -->
   <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <!-- XLSX for Excel -->
   <script src="https://unpkg.com/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
   <!-- PapaParse for CSV -->
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-  <!-- Firebase (Compat CDN so we can use globals easily in a single file) -->
-  <script defer src="https://www.gstatic.com/firebasejs/10.12.4/firebase-app-compat.js"></script>
-  <script defer src="https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore-compat.js"></script>
-  <script defer src="https://www.gstatic.com/firebasejs/10.12.4/firebase-auth-compat.js"></script>
+
+  <!-- Firebase (Compat CDN) - LOAD BEFORE the inline Babel/React app -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-auth-compat.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
   <style>
     /* Optional scrollbar polish */
@@ -61,18 +62,31 @@
     const Firebase = {
       app: null, auth: null, db: null, user: null,
       init() {
-        // TODO: add your Firebase config here
-        const firebaseConfig = {
-          apiKey: "YOUR_API_KEY",
-          authDomain: "YOUR_AUTH_DOMAIN",
-          projectId: "YOUR_PROJECT_ID",
-          storageBucket: "YOUR_STORAGE_BUCKET",
-          messagingSenderId: "YOUR_SENDER_ID",
-          appId: "YOUR_APP_ID",
+        // Wait for firebase global to exist (safety for ordering)
+        const waitForFirebase = (attempts = 0) => {
+          if (typeof window.firebase === 'undefined') {
+            if (attempts > 50) throw new Error('Firebase not loaded');
+            return new Promise(res => setTimeout(() => res(waitForFirebase(attempts + 1)), 50));
+          }
+          return Promise.resolve();
         };
-        this.app = firebase.initializeApp(firebaseConfig);
-        this.auth = firebase.auth();
-        this.db = firebase.firestore();
+
+        return waitForFirebase().then(() => {
+          // TODO: replace these with your actual Firebase values
+          const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_SENDER_ID",
+            appId: "YOUR_APP_ID",
+          };
+          this.app = firebase.initializeApp(firebaseConfig);
+          this.auth = firebase.auth();
+          this.db = firebase.firestore();
+        }).catch(err => {
+          console.error('Firebase init failed', err);
+        });
       },
       onAuth(cb) {
         return this.auth.onAuthStateChanged(cb);
