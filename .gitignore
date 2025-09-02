@@ -10,5 +10,20 @@ build/
 
 # IDE files
 .vscode/
+.idea/
+
 # Logs
 logs/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# PHP specific
+vendor/
+*.log
+*.cache
+*.tmp
+
+# Ignore composer lock file if not needed
+composer.lock
