@@ -1,86 +1,27 @@
 <?php
 session_start();
 
+define("USER", "admin");
+define("PASS", "1234");
 
-// $users = [
-//     'student' => 'password123',
-//     'admin' => 'adminpass'
-// ];
+$error = "";
 
-
-// if (isset($_GET['logout'])) {
-//     session_unset();
-//     session_destroy();
-//     setcookie('rememberme', '', time() - 3600, '/');
-//     header("Location: login.php");
-//     exit;
-// }
-
-// Handle login
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = trim($_POST['username'] ?? '');
-    $password = trim($_POST['password'] ?? '');
-    $remember = isset($_POST['remember']);
+    $uname = htmlspecialchars($_POST["username"]);
+    $pass = htmlspecialchars($_POST["password"]);
+    $remember = isset($_POST["remember"]);
 
-    if (isset($users[$username]) && $users[$username] === $password) {
-        $_SESSION['user'] = $username;
+    if (USER == $uname && PASS == $pass) {
+        $_SESSION['username'] = $uname;
+        setcookie('username', $uname, time() + 3600, "/");
         if ($remember) {
-            setcookie('rememberme', $username, time() + 7 * 24 * 3600, '/');
+            setcookie('rememberme', $uname, time() + 7 * 24 * 3600, "/");
         }
-        header("Location: login.php");
+        header("Location: profile.php");
         exit;
     } else {
         $error = "Invalid username or password.";
     }
-}
-
-
-if (!isset($_SESSION['user']) && isset($_COOKIE['rememberme'])) {
-    $cookieUser = $_COOKIE['rememberme'];
-    if (isset($users[$cookieUser])) {
-        $_SESSION['user'] = $cookieUser;
-    }
-}
-
-
-if (isset($_SESSION['user'])) {
-    $user = $_SESSION['user'];
-    echo <<<HTML
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f8f8f8;
-        }
-
-        .container {
-            background: #fff;
-            padding: 2em;
-            border-radius: 8px;
-            max-width: 400px;
-            margin: 2em auto;
-            box-shadow: 0 2px 8px #ccc;
-        }
-
-        .logout {
-            margin-top: 1em;
-        }
-    </style>
-</head>
-<body>
-<div class="container">
-    <h2>Welcome, $user!</h2>
-    <p>You are logged in.</p>
-    <a class="logout" href="login.php?logout=1">Logout</a>
-</div>
-</body>
-</html>
-HTML;
-    exit;
 }
 ?>
 <!DOCTYPE html>
@@ -88,7 +29,7 @@ HTML;
 
 <head>
     <meta charset="UTF-8">
-    <title>Login System</title>
+    <title>Login</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -129,7 +70,7 @@ HTML;
         <?php if (!empty($error)): ?>
             <div class="error"><?= $error ?></div>
         <?php endif; ?>
-        <form method="post" autocomplete="off">
+        <form method="POST" autocomplete="off">
             <label>Username:
                 <input type="text" name="username" required>
             </label>
@@ -139,7 +80,7 @@ HTML;
             <label>
                 <input type="checkbox" name="remember"> Remember Me
             </label>
-            <button type="submit" style="margin-top:1em;">Login</button>
+            <button type="submit" style="margin-top:1em;" name="button">Login</button>
         </form>
     </div>
 </body>
