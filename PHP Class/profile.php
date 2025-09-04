@@ -21,7 +21,7 @@ session_start();
     if (isset($_COOKIE["username"])) {
         echo "Username (Cookie): " . htmlspecialchars($_COOKIE["username"]) . "<br>";
     }
-    // Show rememberme cookie if available
+    
     if (isset($_COOKIE["rememberme"])) {
         echo "Remember Me (Cookie): " . htmlspecialchars($_COOKIE["rememberme"]) . "<br>";
     }
