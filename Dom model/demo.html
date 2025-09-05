@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid black;
+  box-sizing: border-box;  /* keeps total width = 200px */
+}
+
+    </style>
+</head>
+<body>
+    <script>
+        // let name = prompt("Enter your name:");
+        // alert("Hello, " + name + "!");
+
+        // let decide = confirm("Do you want to proceed?");
+        // if (decide) {
+        //     alert("You chose to proceed.");
+        // } else {
+        //     alert("You chose not to proceed.");
+        // }
+        let num  =10;
+        let str = String(num);
+        console.log(typeof str); 
+        Boolean(1);   // true
+Boolean(0);   // false
+Boolean("");  // false
+Boolean("Hi"); // true
+
+
+Math.round(4.7);   // 5
+Math.floor(4.7);   // 4
+Math.ceil(4.2);    // 5
+Math.pow(2, 3);    // 8
+Math.sqrt(25);     // 5
+Math.random();     // random number between 0 and 1
+console.log(Math.round(4.7));
+console.log(Math.floor(4.7));
+console.log(Math.ceil(4.2));
+console.log(Math.pow(2, 3));
+console.log(Math.sqrt(25));
+console.log(Boolean(""));
+
+
+let ans = function hello (name)
+// {
+
+//     console.log("Hello World");
+//     alert("Hello World");
+{
+    return "Hello " + name
+
+}
+console.log(ans("king "));
+hello();
+    </script>
+
+    <div>This is a div element.</div>
+</body>
+</html>
