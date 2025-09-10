@@ -1,66 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
         div {
-  width: 200px;
-  padding: 20px;
-  border: 5px solid black;
-  box-sizing: border-box;  /* keeps total width = 200px */
-}
+            width: 200px;
+            padding: 20px;
+            border: 5px solid black;
+            box-sizing: border-box;
+            margin: 20px;
+        }
 
+        .p {
+            color: red;
+            background-color: antiquewhite;
+        }
     </style>
 </head>
+
 <body>
+    <p id="demo"> This is the DOM Demo .</p>
+    <div>This is a div element.</div>
+    <p id="demo1">Hello</p>
+
+    <button onclick="ChangeContent()" class="btn">Change Content</button>
+
+    <p class="text">Hi</p>
+    <p class="text">Welcome</p>
+    <a href="www.example.com">Click Me </a>
+
+    <img class="img" src="../Dom model/rpcp.jpeg" alt="cspit.jpeg">
+
     <script>
         // let name = prompt("Enter your name:");
         // alert("Hello, " + name + "!");
 
-        // let decide = confirm("Do you want to proceed?");
+        // let decide = confirm("Do you want to proceed!!");
         // if (decide) {
         //     alert("You chose to proceed.");
         // } else {
         //     alert("You chose not to proceed.");
         // }
-        let num  =10;
+        let num = 10;
         let str = String(num);
-        console.log(typeof str); 
+        console.log(typeof str);
+
         Boolean(1);   // true
-Boolean(0);   // false
-Boolean("");  // false
-Boolean("Hi"); // true
+        Boolean(0);   // false
+        Boolean("");  // false
+        Boolean("Hi"); // true
+
+        let x = 5, y = '5';
+        console.log(x + y);
+        console.log(x - y);
+        console.log(x % y);
+        console.log(x === y);
+        console.log(x == y);
+        let a = 10;
+        a += 5;
+        console.log(a);
+        console.log(true && false);
+        console.log(true || false);
+        console.log(!true);
 
 
-Math.round(4.7);   // 5
-Math.floor(4.7);   // 4
-Math.ceil(4.2);    // 5
-Math.pow(2, 3);    // 8
-Math.sqrt(25);     // 5
-Math.random();     // random number between 0 and 1
-console.log(Math.round(4.7));
-console.log(Math.floor(4.7));
-console.log(Math.ceil(4.2));
-console.log(Math.pow(2, 3));
-console.log(Math.sqrt(25));
-console.log(Boolean(""));
+        Math.round(4.7);
+        Math.floor(4.7);
+        Math.ceil(4.2);
+        Math.pow(2, 3);
+        Math.sqrt(25);
+        Math.random();
+        console.log(Math.round(4.7));
+        console.log(Math.floor(4.7));
+        console.log(Math.ceil(4.2));
+        console.log(Math.pow(2, 3));
+        console.log(Math.sqrt(25));
+        console.log(Boolean(""));
 
 
-let ans = function hello (name)
-// {
+        // let ans = function hello(name) {
+        //     console.log("Hello World" + name);
+        //     alert("Hello World" + name);
+        //     return name;
+        // }
+        // ans("king ");
 
-//     console.log("Hello World");
-//     alert("Hello World");
-{
-    return "Hello " + name
 
-}
-console.log(ans("king "));
-hello();
+        let greet = (name) => {
+            return "hello" + name;
+        };
+        console.log(greet("king "));
+
+        document.getElementById("demo").style.color = "blue";
+        document.getElementById("demo1").style.color = "green";
+        // dom part
+        document.getElementById("demo").innerHTML = "Hello JavaScript!";
+
+        let element = document.getElementById("demo");
+        console.log(element.innerHTML);
+
+        let elements = document.getElementsByClassName("text");
+        console.log(elements[0].innerHTML);
+
+
+        function ChangeContent() {
+            document.querySelector("a").href = "www.heet18.vercel.app";
+            document.getElementById("demo").innerHTML = "Content Changed!";
+            document.getElementById("demo").style.color = "red";
+            document.getElementById("demo").style.backgroundColor = "yellow";
+        }
+
+        document.getElementById("btn").onclick = function ChangeContent() {
+
+            document.getElementById("img").src = "../Dom model/cspit.jpeg";
+            btn.addEventListener('click', function () {
+                // document.getElementById("demo").innerHTML = "Content Changed!";
+                document.getElementById("demo").style.color = "red";
+                document.getElementById("demo").style.backgroundColor = "yellow";
+                document.getElementById("demo").textContent = "Content Changed!";
+
+                // setTimeout(() => {
+                //     btn.removeEventListener("click", ChangeContent);
+                // }, 1);   // this is for the timeout of the button command 
+            });
+        };
+
+        // console.log("hello");
+        // console.log(0 == false);
+
+        
+
+
     </script>
 
-    <div>This is a div element.</div>
 </body>
+
 </html>
