@@ -34,7 +34,26 @@
 
     <img class="img" src="../Dom model/rpcp.jpeg" alt="cspit.jpeg">
 
-    <script>
+
+
+    <title>TO do list:
+
+    </title>
+
+    <h2>My To Do List</h2>
+    <input type="text" id="myInput" placeholder="Title...">
+    <button onclick="list()" class="addBtn">Add</button>
+    <button onclick="deleteList()" class="addBtn">Delete</button>
+    <ul id="myList">
+        <li>Hit the gym</li>
+        <li>Pay bills</li>
+        <li>Meet George</li>
+        <li>Buy eggs</li>
+        <li>Read a book</li>
+        <li>Organize office</li>
+    </ul>
+    
+<script>
         // let name = prompt("Enter your name:");
         // alert("Hello, " + name + "!");
 
@@ -73,12 +92,12 @@
         Math.pow(2, 3);
         Math.sqrt(25);
         Math.random();
-        console.log(Math.round(4.7));
-        console.log(Math.floor(4.7));
-        console.log(Math.ceil(4.2));
-        console.log(Math.pow(2, 3));
-        console.log(Math.sqrt(25));
-        console.log(Boolean(""));
+        // console.log(Math.round(4.7));
+        // console.log(Math.floor(4.7));
+        // console.log(Math.ceil(4.2));
+        // console.log(Math.pow(2, 3));
+        // console.log(Math.sqrt(25));
+        // console.log(Boolean(""));
 
 
         // let ans = function hello(name) {
@@ -92,7 +111,7 @@
         let greet = (name) => {
             return "hello" + name;
         };
-        console.log(greet("king "));
+        // console.log(greet("king "));
 
         document.getElementById("demo").style.color = "blue";
         document.getElementById("demo1").style.color = "green";
@@ -100,10 +119,10 @@
         document.getElementById("demo").innerHTML = "Hello JavaScript!";
 
         let element = document.getElementById("demo");
-        console.log(element.innerHTML);
+        // console.log(element.innerHTML);
 
         let elements = document.getElementsByClassName("text");
-        console.log(elements[0].innerHTML);
+        // console.log(elements[0].innerHTML);
 
 
         function ChangeContent() {
@@ -113,27 +132,68 @@
             document.getElementById("demo").style.backgroundColor = "yellow";
         }
 
-        document.getElementById("btn").onclick = function ChangeContent() {
+        // document.getElementById("btn").onclick = function ChangeContent() {
 
-            document.getElementById("img").src = "../Dom model/cspit.jpeg";
-            btn.addEventListener('click', function () {
-                // document.getElementById("demo").innerHTML = "Content Changed!";
-                document.getElementById("demo").style.color = "red";
-                document.getElementById("demo").style.backgroundColor = "yellow";
-                document.getElementById("demo").textContent = "Content Changed!";
+        //     document.getElementById("img").src = "../Dom model/cspit.jpeg";
+        //     btn.addEventListener('click', function () {
+        //         // document.getElementById("demo").innerHTML = "Content Changed!";
+        //         document.getElementById("demo").style.color = "red";
+        //         document.getElementById("demo").style.backgroundColor = "yellow";
+        //         document.getElementById("demo").textContent = "Content Changed!";
 
-                // setTimeout(() => {
-                //     btn.removeEventListener("click", ChangeContent);
-                // }, 1);   // this is for the timeout of the button command 
-            });
-        };
+        //         // setTimeout(() => {
+        //         //     btn.removeEventListener("click", ChangeContent);
+        //         // }, 1);   // this is for the timeout of the button command 
+        //     });
+        // };
 
         // console.log("hello");
         // console.log(0 == false);
 
-        
 
 
+        // let object = { name: "HEET" };
+        // let object2 = object;
+        // object2.name = "KING";
+        // console.log(object.name);
+
+        // console.log(object2.name.toUpperCase());
+
+        // let num1 = 12.345;
+        // console.log(num1.toFixed(1));
+
+
+
+
+        // let str1 = "Hello World";
+        // console.log(str1.length);
+        // console.log(str1.toUpperCase());
+        // console.log(str1.slice(1, 5));
+        // console.log(10>"5");
+
+
+        let user = { name: "Heet", age: 20 };
+        let userStr = JSON.stringify(user);
+        console.log(userStr); 
+        let obj = JSON.parse(userStr);
+        console.log(obj.name);
+
+
+
+
+        let list  = function()
+        {
+            let li = document.createElement("li");
+            li.textContent = document.getElementById("myInput").value;
+            document.getElementById("myList").appendChild(li);
+            document.getElementById("myInput").value = "";
+        }
+        let deleteList = function()
+        {
+            let list = document.getElementById("myList");
+            list.removeChild(list.lastElementChild);
+            strikethrough(list.lastElementChild);
+        }
     </script>
 
 </body>
