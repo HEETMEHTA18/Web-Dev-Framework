@@ -17,9 +17,10 @@
 
     function add($a, $b)
     {
-     return $a+$b;
+     return $a ** $b;
     }
-  
+    echo "this is :" . (add(2,3));
+
     function multiply($a, $b)
     {
      return $a*$b;
