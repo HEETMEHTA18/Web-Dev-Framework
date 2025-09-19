@@ -1,8 +1,11 @@
 # Dependency folders
 node_modules/
+vendor/
 
 # Environment variables
 .env
+*.env
+*.env.*
 
 # Build output
 dist/
@@ -14,6 +17,7 @@ build/
 
 # Logs
 logs/
+*.log
 
 # OS generated files
 .DS_Store
@@ -27,3 +31,35 @@ vendor/
 
 # Ignore composer lock file if not needed
 composer.lock
+
+# Ignore user data and sensitive files
+users.txt
+*.sqlite
+*.db
+
+# Ignore PHP config and secret files
+config.php
+db.php
+*.key
+*.pem
+
+# Ignore compiled files
+*.class
+*.exe
+*.dll
+*.o
+*.so
+
+# Ignore backup files
+*.bak
+*.tmp
+*.swp
+
+# Ignore media uploads (if any)
+*.mp4
+*.jpg
+*.jpeg
+*.png
+*.gif
+
+# Ignore any other sensitive or temporary files
