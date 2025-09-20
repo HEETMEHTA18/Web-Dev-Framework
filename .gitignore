@@ -33,9 +33,25 @@ vendor/
 composer.lock
 
 # Ignore user data and sensitive files
+
+# Python virtual environments
+venv/
+venv310/
+
+# User data and secrets
 users.txt
-*.sqlite
+*.env
 *.db
+*.sqlite
+*.log
+
+# Python cache
+__pycache__/
+*.pyc
+
+# IDE and editor settings
+.vscode/
+.idea/
 
 # Ignore PHP config and secret files
 config.php

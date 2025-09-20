@@ -1,0 +1,42 @@
+{
+  "text": {
+    "weather": 4,
+    "for": 2,
+    "delhi": 1,
+    "on": 3,
+    "__number__": 0
+  },
+  "intent": {
+    "ask_weather": 0,
+    "bot_challenge": 1,
+    "goodbye": 2,
+    "greet": 3,
+    "mood_great": 4,
+    "mood_unhappy": 5
+  },
+  "response": null,
+  "action_name": {
+    "action_listen": 7,
+    "action_restart": 8,
+    "action_session_start": 10,
+    "action_default_fallback": 4,
+    "action_deactivate_loop": 1,
+    "action_revert_fallback_events": 9,
+    "action_default_ask_affirmation": 2,
+    "action_default_ask_rephrase": 3,
+    "action_two_stage_fallback": 11,
+    "action_unlikely_intent": 12,
+    "action_back": 0,
+    "action_extract_slots": 5,
+    "action_get_weather": 6,
+    "utter_ask_date": 13,
+    "utter_ask_location": 14,
+    "utter_cheer_up": 15,
+    "utter_goodbye": 16,
+    "utter_greet": 17,
+    "utter_happy": 18,
+    "utter_iamabot": 19
+  },
+  "action_text": null,
+  "intent_response_key": null
+}
