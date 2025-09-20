@@ -1,0 +1,275 @@
+version: "3.1"
+
+nlu:
+  - intent: ask_weather
+    examples: |
+      - What was the temperature in Ahmedabad on 2016-01-01?
+      - Tell me the weather in Mumbai on 2017-05-10
+      - Weather for Delhi on 2018-12-25
+      - How hot was it in Pune on 2019-07-15?
+      - Give me the temperature for Bangalore on 2020-03-20
+      - give me the weather
+      - weather
+      - tell me the weather
+      - what is the weather
+      - temperature
+      - what is the temperature
+      - show me the weather
+      - I want to know the weather
+      - can you tell me the weather
+      - do you know the temperature
+      - weather report
+      - weather update
+      - temperature update
+      - how is the weather
+      - how's the weather
+      - what's the weather like
+      - what's the temperature
+    lookup: location
+    - Ahmedabad
+    - Mumbai
+    - Delhi
+    - Pune
+    - Bangalore
+    - Surat
+    - Vadodara
+    - Rajkot
+    - Gandhinagar
+    - Jamnagar
+    - Bhavnagar
+    - Junagadh
+    - Anand
+    - Nadiad
+    - Valsad
+    - Navsari
+    - Bharuch
+    - Mehsana
+    - Morbi
+    - Surendranagar
+    - Amreli
+    - Kutch
+    - Patan
+    - Porbandar
+    - Palanpur
+    - Veraval
+    - Godhra
+    - Dahod
+    - Botad
+    - Chhota Udaipur
+    - Mahisagar
+    - Aravalli
+    - Devbhoomi Dwarka
+    - Gir Somnath
+    - Tapi
+    - Dang
+    - Kheda
+    - Banaskantha
+    - Sabarkantha
+    - Panchmahal
+    - Dholera
+    - Daman
+    - Diu
+    - Silvassa
+    - Dadra
+    - Nagar Haveli
+    - Vapi
+    - Umbergaon
+    - Pardi
+    - Valsad
+    - Navsari
+    - Surat
+    - Bharuch
+    - Ankleshwar
+    - Vadodara
+    - Anand
+    - Nadiad
+    - Kheda
+    - Ahmedabad
+    - Gandhinagar
+    - Mehsana
+    - Palanpur
+    - Patan
+    - Siddhpur
+    - Unjha
+    - Visnagar
+    - Himmatnagar
+    - Idar
+    - Modasa
+    - Bayad
+    - Lunawada
+    - Godhra
+    - Dahod
+    - Jhalod
+    - Baria
+    - Chhota Udaipur
+    - Bodeli
+    - Rajpipla
+    - Narmada
+    - Bharuch
+    - Ankleshwar
+    - Surat
+    - Navsari
+    - Valsad
+    - Pardi
+    - Umbergaon
+    - Vapi
+    - Silvassa
+    - Dadra
+    - Nagar Haveli
+    - Daman
+    - Diu
+    - Bhuj
+    - Gandhidham
+    - Mandvi
+    - Mundra
+    - Anjar
+    - Morbi
+    - Wankaner
+    - Rajkot
+    - Jamnagar
+    - Khambhalia
+    - Okha
+    - Porbandar
+    - Veraval
+    - Junagadh
+    - Keshod
+    - Mangrol
+    - Amreli
+    - Savarkundla
+    - Bhavnagar
+    - Botad
+    - Palitana
+    - Mahuva
+    - Dholera
+    - Dhandhuka
+    - Dholka
+    - Bavla
+    - Sanand
+    - Viramgam
+    - Kadi
+    - Kalol
+    - Gandhinagar
+    - Ahmedabad
+    - Surat
+    - Vadodara
+    - Rajkot
+    - Bhavnagar
+    - Jamnagar
+    - Junagadh
+    - Gandhinagar
+    - Surendranagar
+    - Mehsana
+    - Banaskantha
+    - Patan
+    - Sabarkantha
+    - Kutch
+    - Anand
+    - Panchmahal
+    - Dahod
+    - Navsari
+    - Valsad
+    - Narmada
+    - Tapi
+    - Morbi
+    - Mahisagar
+    - Aravalli
+    - Botad
+    - Chhota Udaipur
+    - Devbhoomi Dwarka
+    - Gir Somnath
+    - Dangs
+    - Amreli
+    - Porbandar
+    - Surendranagar
+    - Kheda
+    - Bharuch
+    - Gandhinagar
+    - Ahmedabad
+    - Surat
+    - Vadodara
+    - Rajkot
+    - Bhavnagar
+    - Jamnagar
+    - Junagadh
+    - Gandhinagar
+    - Surendranagar
+    - Mehsana
+    - Banaskantha
+    - Patan
+    - Sabarkantha
+    - Kutch
+    - Anand
+    - Panchmahal
+    - Dahod
+    - Navsari
+    - Valsad
+    - Narmada
+    - Tapi
+    - Morbi
+    - Mahisagar
+    - Aravalli
+    - Botad
+    - Chhota Udaipur
+    - Devbhoomi Dwarka
+    - Gir Somnath
+    - Dangs
+    - Amreli
+    - Porbandar
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - moin
+      - hey there
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
+  - intent: goodbye
+    examples: |
+      - cu
+      - good by
+      - cee you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+  - intent: mood_great
+    examples: |
+      - perfect
+      - great
+      - amazing
+      - feeling like a king
+      - wonderful
+      - I am feeling very good
+      - I am great
+      - so so perfect
+      - so good
+      - so perfect
+  - intent: mood_unhappy
+    examples: |
+      - my day was horrible
+      - I am sad
+      - I don't feel very well
+      - I am disappointed
+      - super sad
+      - I'm so sad
+      - sad
+      - very sad
+      - unhappy
+      - not good
+      - not very good
+      - extremly sad
+      - so saad
+      - so sad
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?
