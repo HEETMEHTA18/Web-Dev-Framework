@@ -16,31 +16,26 @@ class ActionGetWeather(Action):
 
 	def run(self, dispatcher, tracker, domain):
 		location = tracker.get_slot("location")
+		location = tracker.get_slot("location")
 		date = tracker.get_slot("date")
 		print(f"DEBUG: location={location}, date={date}")
+		import pandas as pd
 		try:
-			df = pd.read_csv("actions/weatherHistory.csv")
+			df = pd.read_csv("actions/weather_lookup.csv")
 		except Exception as e:
 			dispatcher.utter_message(text=f"Error reading weather data: {e}")
 			return []
-		# Try to match location in all string columns if not found in 'Summary'
-		result = df
-		if date:
-			result = result[result['Formatted Date'].astype(str).str.contains(str(date))]
-		if location:
-			# Try 'Summary' first, then any string column
-			loc_match = result[result['Summary'].str.contains(location, case=False, na=False)]
-			if loc_match.empty:
-				for col in result.select_dtypes(include='object').columns:
-					loc_match = result[result[col].astype(str).str.contains(location, case=False, na=False)]
-					if not loc_match.empty:
-						result = loc_match
-						break
-			else:
-				result = loc_match
-		if not result.empty:
-			temp = result.iloc[0]['Temperature (C)']
-			dispatcher.utter_message(text=f"The temperature in {location or 'the location'} on {date or 'that date'} was {temp}°C.")
+		if location and date:
+			match = df[(df['City'].str.lower() == location.lower()) & (df['Date'] == date)]
+		elif location:
+			match = df[df['City'].str.lower() == location.lower()]
+		elif date:
+			match = df[df['Date'] == date]
+		else:
+			match = pd.DataFrame()
+		if not match.empty:
+			row = match.iloc[0]
+			dispatcher.utter_message(text=f"The weather in {row['City']} on {row['Date']} was {row['Weather']} with a temperature of {row['Temperature']}°C.")
 		else:
 			dispatcher.utter_message(text="Sorry, I couldn't find weather data for that location and date.")
 		return []
