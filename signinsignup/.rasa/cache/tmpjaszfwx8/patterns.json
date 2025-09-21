@@ -1,0 +1,6 @@
+[
+  {
+    "name": "location",
+    "pattern": "(\\bAhmedabad\\b|\\bMumbai\\b|\\bDelhi\\b|\\bPune\\b|\\bBangalore\\b|\\bSurat\\b|\\bVadodara\\b|\\bRajkot\\b|\\bGandhinagar\\b|\\bJamnagar\\b|\\bBhavnagar\\b|\\bJunagadh\\b|\\bAnand\\b|\\bNadiad\\b|\\bValsad\\b|\\bNavsari\\b|\\bBharuch\\b|\\bMehsana\\b|\\bMorbi\\b|\\bSurendranagar\\b|\\bAmreli\\b|\\bKutch\\b|\\bPatan\\b|\\bPorbandar\\b|\\bPalanpur\\b|\\bVeraval\\b|\\bGodhra\\b|\\bDahod\\b|\\bBotad\\b|\\bChhota\\ Udaipur\\b|\\bMahisagar\\b|\\bAravalli\\b|\\bDevbhoomi\\ Dwarka\\b|\\bGir\\ Somnath\\b|\\bTapi\\b|\\bDang\\b|\\bKheda\\b|\\bBanaskantha\\b|\\bSabarkantha\\b|\\bPanchmahal\\b|\\bDholera\\b|\\bDaman\\b|\\bDiu\\b|\\bSilvassa\\b|\\bDadra\\b|\\bNagar\\ Haveli\\b|\\bVapi\\b|\\bUmbergaon\\b|\\bPardi\\b|\\bAnkleshwar\\b|\\bSiddhpur\\b|\\bUnjha\\b|\\bVisnagar\\b|\\bHimmatnagar\\b|\\bIdar\\b|\\bModasa\\b|\\bBayad\\b|\\bLunawada\\b|\\bJhalod\\b|\\bBaria\\b|\\bBodeli\\b|\\bRajpipla\\b|\\bNarmada\\b|\\bBhuj\\b|\\bGandhidham\\b|\\bMandvi\\b|\\bMundra\\b|\\bAnjar\\b|\\bWankaner\\b|\\bKhambhalia\\b|\\bOkha\\b|\\bKeshod\\b|\\bMangrol\\b|\\bSavarkundla\\b|\\bPalitana\\b|\\bMahuva\\b|\\bDhandhuka\\b|\\bDholka\\b|\\bBavla\\b|\\bSanand\\b|\\bViramgam\\b|\\bKadi\\b|\\bKalol\\b|\\bSurendranagar\\b)"
+  }
+]
