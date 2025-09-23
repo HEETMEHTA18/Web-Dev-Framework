@@ -1,4 +1,4 @@
-<?php
+        <?php
 if(!isset($_COOKIE["name"]))
 {
     setcookie("name", "Heet", time()+3600);
