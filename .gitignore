@@ -1,302 +1,85 @@
-# ============================================# ============================================# Dependency folders
-
+# ============================================
 # Dependencies
-
-# ============================================# Dependenciesnode_modules/
-
+# ============================================
 node_modules/
-
-vendor/# ============================================vendor/
-
+vendor/
 bower_components/
+jspm_packages/
 
-jspm_packages/node_modules/
-
-
-
-# ============================================vendor/# Environment variables
-
+# ============================================
 # Environment Variables & Secrets
-
-# ============================================bower_components/.env
-
+# ============================================
 .env
-
-.env.*jspm_packages/*.env
-
+.env.*
 !.env.example
-
-*.local*.env.*
-
+*.local
 config.php
-
-db.php# ============================================
-
+db.php
 *.key
-
-*.pem# Environment Variables & Secrets# Build output
-
+*.pem
 users.txt
 
-# ============================================dist/
-
 # ============================================
-
-# Build Output & Distribution.envbuild/
-
+# Build Output & Distribution
 # ============================================
-
-dist/.env.*
-
+dist/
 build/
-
-out/!.env.example# IDE files
-
+out/
 .next/
-
-.nuxt/*.local.vscode/
-
+.nuxt/
 *.bundle.js
+*.bundle.css
 
-*.bundle.cssconfig.php.idea/
-
-
-
-# ============================================db.php
-
+# ============================================
 # IDE & Editor Settings
-
-# ============================================*.key# Logs
-
+# ============================================
 .vscode/
-
-.idea/*.pemlogs/
-
+.idea/
 *.sublime-project
-
-*.sublime-workspaceusers.txt*.log
-
+*.sublime-workspace
 *.code-workspace
 
-
-
 # ============================================
-
-# Logs & Databases# ============================================# OS generated files
-
+# Logs & Databases
 # ============================================
-
-logs/# Build Output & Distribution.DS_Store
-
+logs/
 *.log
-
-npm-debug.log*# ============================================Thumbs.db
-
+npm-debug.log*
 yarn-debug.log*
-
-yarn-error.log*dist/
-
+yarn-error.log*
 lerna-debug.log*
-
-*.dbbuild/# PHP specific
-
+*.db
 *.sqlite
+*.sqlite3
 
-*.sqlite3out/vendor/
-
-
-
-# ============================================.next/*.log
-
+# ============================================
 # OS Generated Files
-
-# ============================================.nuxt/*.cache
-
+# ============================================
 .DS_Store
-
-.DS_Store?*.bundle.js*.tmp
-
+.DS_Store?
 ._*
-
-.Spotlight-V100*.bundle.css
-
+.Spotlight-V100
 .Trashes
-
-ehthumbs.db# Ignore composer lock file if not needed
-
+ehthumbs.db
 Thumbs.db
+Desktop.ini
 
-Desktop.ini# ============================================composer.lock
-
-
-
-# ============================================# IDE & Editor Settings
-
+# ============================================
 # Python
-
-# ============================================# ============================================# Ignore user data and sensitive files
-
+# ============================================
 __pycache__/
-
-*.py[cod].vscode/
-
+*.py[cod]
 *$py.class
-
-*.so.idea/# Python virtual environments
-
-venv/
-
-venv310/*.sublime-projectvenv/
-
-ENV/
-
-env/*.sublime-workspacevenv310/
-
-.Python
-
-pip-log.txt*.code-workspace
-
-
-
-# ============================================# User data and secrets
-
-# PHP
-
-# ============================================# ============================================users.txt
-
-*.cache
-
-composer.lock# Logs & Databases*.env
-
-*.phar
-
-# ============================================*.db
-
-# ============================================
-
-# Compiled Fileslogs/*.sqlite
-
-# ============================================
-
-*.class*.log*.log
-
-*.exe
-
-*.dllnpm-debug.log*
-
-*.o
-
-*.dylibyarn-debug.log*# Python cache
-
-
-
-# ============================================yarn-error.log*__pycache__/
-
-# Temporary & Backup Files
-
-# ============================================lerna-debug.log**.pyc
-
-*.tmp
-
-*.temp*.db
-
-*.bak
-
-*.swp*.sqlite# IDE and editor settings
-
-*.swo
-
-*~*.sqlite3.vscode/
-
-.#*
-
-.idea/
-
-# ============================================
-
-# Media Files (Large/Uploaded)# ============================================
-
-# ============================================
-
-# Uncomment if you don't want to track media# OS Generated Files# Ignore PHP config and secret files
-
-# *.mp4
-
-# *.avi# ============================================config.php
-
-# *.mov
-
-# *.wmv.DS_Storedb.php
-
-# uploads/
-
-# media/.DS_Store?*.key
-
-
-
-# ============================================._**.pem
-
-# Testing & Coverage
-
-# ============================================.Spotlight-V100
-
-coverage/
-
-.nyc_output/.Trashes# Ignore compiled files
-
-*.lcov
-
-.pytest_cache/ehthumbs.db*.class
-
-
-
-# ============================================Thumbs.db*.exe
-
-# Miscellaneous
-
-# ============================================Desktop.ini*.dll
-
-*.orig
-
-.sass-cache/*.o
-
-*.css.map
-
-*.js.map# ============================================*.so
-
-package-lock.json
-
-yarn.lock# Python
-
-.pnp.*
-
-.yarn/# ============================================# Ignore backup files
-
-
-__pycache__/*.bak
-
-*.py[cod]*.tmp
-
-*$py.class*.swp
-
 *.so
+venv/
+venv310/
+ENV/
+env/
+.Python
+pip-log.txt
+*.pyc
 
-venv/# Ignore media uploads (if any)
-
-venv310/*.mp4
-
-ENV/*.jpg
-
-env/*.jpeg
-
-.Python*.png
-
-pip-log.txt*.gif
-
-
-
-# ============================================# Ignore any other sensitive or temporary files
-
+# ============================================
 # PHP
 # ============================================
 *.cache
@@ -310,7 +93,6 @@ composer.lock
 *.exe
 *.dll
 *.o
-*.so
 *.dylib
 
 # ============================================
@@ -332,6 +114,10 @@ composer.lock
 # *.avi
 # *.mov
 # *.wmv
+# *.jpg
+# *.jpeg
+# *.png
+# *.gif
 # uploads/
 # media/
 
@@ -354,3 +140,10 @@ package-lock.json
 yarn.lock
 .pnp.*
 .yarn/
+
+# ============================================
+# Project Specific
+# ============================================
+signinsignup/venv310/
+signinsignup/.rasa/cache/
+.rasa/
