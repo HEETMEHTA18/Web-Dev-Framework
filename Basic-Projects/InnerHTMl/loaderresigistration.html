@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #4a90e2, #50c9c3);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px;
+      min-height: 100vh;
+      margin: 0;
+      position: relative;
+    }
+
+    /* Timer in top right */
+    #timer {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-weight: bold;
+      background: rgba(255,255,255,0.8);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #333;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .container {
+      background: #ffffff;
+      padding: 25px 30px 60px; /* bottom padding for animation space */
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      max-width: 500px;
+      width: 100%;
+      position: relative;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    input, button, textarea {
+      margin-top: 6px;
+      padding: 10px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #4a90e2;
+      outline: none;
+      box-shadow: 0 0 6px rgba(74, 144, 226, 0.4);
+    }
+
+    button {
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #3b7dc3;
+    }
+
+    #output {
+      margin-top: 25px;
+      padding: 15px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+
+    #output h3 {
+      margin-top: 0;
+      color: #4a90e2;
+    }
+
+    .detail-item {
+      margin: 6px 0;
+      padding: 5px 8px;
+      border-left: 4px solid #4a90e2;
+      background: #fff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    /* Simple walking animation */
+    .loader {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+    }
+
+    .loader .dot {
+      width: 10px;
+      height: 10px;
+      background: #4a90e2;
+      border-radius: 50%;
+      margin: 0 5px;
+      animation: bounce 0.6s infinite alternate;
+    }
+
+    .loader .dot:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .loader .dot:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes bounce {
+      to {
+        transform: translateY(-10px);
+      }
+    }
+
+    .stopped .dot {
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+<body>
+  <div id="timer">Time: 0s</div>
+
+  <div class="container">
+    <h2>Student Login Page</h2>
+
+    <label>Student Name:
+      <input type="text" id="name">
+    </label>
+
+    <label>Student ID:
+      <input type="text" id="studentId">
+    </label>
+
+    <label>Branch:
+      <input type="text" id="branch">
+    </label>
+
+    <label>Email:
+      <input type="email" id="email">
+    </label>
+
+    <label>Phone Number:
+      <input type="text" id="phone">
+    </label>
+
+    <label>Extra Info:
+      <textarea id="extra" rows="3"></textarea>
+    </label>
+
+    <button onclick="loginStudent()">Login</button>
+
+    <div id="output"></div>
+
+    <!-- Loader animation -->
+    <div class="loader" id="loader">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+
+  <script>
+    let seconds = 0;
+    let timerInterval = setInterval(() => {
+      seconds++;
+      document.getElementById("timer").textContent = `Time: ${seconds}s`;
+    }, 1000);
+
+    function loginStudent() {
+      // Stop timer and animation
+      clearInterval(timerInterval);
+      document.getElementById("loader").classList.add("stopped");
+
+      // Create object from form data
+      let student = {
+        name: document.getElementById("name").value.trim(),
+        id: document.getElementById("studentId").value.trim(),
+        branch: document.getElementById("branch").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        phone: document.getElementById("phone").value.trim(),
+        extra: document.getElementById("extra").value.trim(),
+        showInfo: function() {
+          return `
+            <div class="detail-item"><strong>Name:</strong> ${this.name}</div>
+            <div class="detail-item"><strong>Student ID:</strong> ${this.id}</div>
+            <div class="detail-item"><strong>Branch:</strong> ${this.branch}</div>
+            <div class="detail-item"><strong>Email:</strong> ${this.email}</div>
+            <div class="detail-item"><strong>Phone:</strong> ${this.phone}</div>
+            <div class="detail-item"><strong>Extra Info:</strong> ${this.extra || "N/A"}</div>
+          `;
+        }
+      };
+
+      document.getElementById("output").innerHTML = `<h3>Student Login Details</h3>` + student.showInfo();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            width: 200px;
+            padding: 20px;
+            border: 5px solid black;
+            box-sizing: border-box;
+            margin: 20px;
+        }
+
+        .p {
+            color: red;
+            background-color: antiquewhite;
+        }
+
+        :hover {
+            color: blue;
+        }
+
+        nav a {
+            max-width: 111px;
+            display: grid;
+            text-decoration: none;
+            background-color: coral;
+            margin: 10px;
+        }
+
+        table {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+
+        /* Light Theme (default) */
+        body.light-mode {
+            background: #fff;
+            color: #222;
+        }
+
+        body.light-mode div {
+            border-color: #222;
+        }
+
+        body.light-mode nav a {
+            background-color: coral;
+            color: #222;
+        }
+
+        /* Dark Theme */
+        body.dark-mode {
+            background: #181818;
+            color: #eee;
+        }
+
+        body.dark-mode div {
+            border-color: #eee;
+        }
+
+        body.dark-mode nav a {
+            background-color: #333;
+            color: #eee;
+        }
+    </style>
+</head>
+
+<body class="light-mode">
+
+    <table>
+        <thead>
+            <tr>
+                <th colspan="1">Name</th>
+                <th>Roll No</th>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <th>Roll No</th>
+                <th>Class</th>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <th>Roll No</th>
+                <th>Class</th>
+            </tr>
+            <tr>
+                <td></td>
+                <th>Name</th>
+                <th>Roll No</th>
+            </tr>
+
+
+
+
+        </thead>
+    </table>
+
+
+    <h1>FAQ
+        Section
+    </h1>
+    <H1>THIS IS THE FAQ section</H1>
+    <p>
+        This is the FAQ section where you can find answers to common questions.
+    </p>
+    <form action="#">
+        <title>Enter Your NAME:</title>
+        <input type="text" name="user" id="user" placeholder="Enter Your Name">
+        <title>ROll NO:</title>
+        <input type="text" name="roll" id="roll" placeholder="Enter Your Roll No">
+        <button onsubmit="ChangeContent()">Enter</button>
+    </form>
+
+    <nav>
+        <a href="#demo">Go to Demo Section</a>
+        <a href="#demo1">Go to Demo1 Section</a>
+    </nav>
+    <p id="demo"> This is the DOM Demo .</p>
+    <div>This is a div element.</div>
+    <p id="demo1">Hello</p>
+
+    <button onclick="ChangeContent()" class="btn">Change Content</button>
+
+    <p class="text">Hi</p>
+    <p class="text">Welcome</p>
+    <a href="www.example.com">Click Me </a>
+
+    <img class="img" src="../Dom model/rpcp.jpeg" alt="cspit.jpeg">
+
+
+
+    <title>TO do list:
+
+    </title>
+
+    <h2 class=":hover">My To Do List</h2>
+
+    <input type="text" id="myInput" placeholder="Title...">
+    <button onclick="list()" class="addBtn">Add</button>
+    <button onclick="regex()" class="addBtn">Delete</button>
+    <ul id="myList">
+        <li>Hit the gym</li>
+        <li>Pay bills</li>
+        <li>Meet George</li>
+        <li>Buy eggs</li>
+        <li>Read a book</li>
+        <li>Organize office</li>
+    </ul>
+
+    <title>QUIZ APP </title>
+    <h1>Q1.</h1>
+    <p>What is the capital city of india </p>
+
+    <input type="radio" id="q1" value="Delhi">Delhi
+    <input type="radio" id="q1" value="Mumbai">Mumbai
+    <input type="radio" id="q1" value="Chennai">Chennai <br>
+    <select>
+        <option>Two</option>
+    </select>
+    <button onclick="regex()" class="addBtn">Submit</button>
+
+    <section id="faq" style="margin: 30px 0;">
+        <h2>Frequently Asked Questions</h2>
+        <div>
+            <button onclick="toggleFAQ('faq1')" style="cursor:pointer;">What is this page about?</button>
+            <div id="faq1" style="display:none; margin-bottom:10px;">
+                This page demonstrates basic DOM manipulation and JavaScript features.
+            </div>
+        </div>
+        <div>
+            <button onclick="toggleFAQ('faq2')" style="cursor:pointer;">How do I use the To Do List?</button>
+            <div id="faq2" style="display:none; margin-bottom:10px;">
+                Type your task in the input and click "Add" to add it to the list. Click "Delete" to remove the last
+                item.
+            </div>
+        </div>
+        <div>
+            <button onclick="toggleFAQ('faq3')" style="cursor:pointer;">Who made this demo?</button>
+            <div id="faq3" style="display:none; margin-bottom:10px;">
+                This demo was created by Heet.
+            </div>
+        </div>
+    </section>
+    <script>
+        console.log("5"+3);
+        console.log("5"-3);
+        
+
+        
+
+        // let name = prompt("Enter your name:");
+        // alert("Hello, " + name + "!");
+
+        // let decide = confirm("Do you want to proceed!!");
+        // if (decide) {
+        //     alert("You chose to proceed.");
+        // } else {
+        //     alert("You chose not to proceed.");
+        // }
+        let num = 10;
+        let str = String(num);
+        console.log(typeof str);
+
+        Boolean(1);   // true
+        Boolean(0);   // false
+        Boolean("");  // false
+        Boolean("Hi"); // true
+
+        let x = 5, y = '5';
+        console.log(x + y);
+        console.log(x - y);
+        console.log(x % y);
+        console.log(x === y);
+        console.log(x == y);
+        let a = 10;
+        a += 5;
+        console.log(a);
+        console.log(true && false);
+        console.log(true || false);
+        console.log(!true);
+
+        document.getElementById("faq").scrollIntoView();
+
+        Math.round(4.7);
+        Math.floor(4.7);
+        Math.ceil(4.2);
+        Math.pow(2, 3);
+        Math.sqrt(25);
+        Math.random();
+        // console.log(Math.round(4.7));
+        // console.log(Math.floor(4.7));
+        // console.log(Math.ceil(4.2));
+        // console.log(Math.pow(2, 3));
+        // console.log(Math.sqrt(25));
+        // console.log(Boolean(""));
+
+
+        // let ans = function hello(name) {
+        //     console.log("Hello World" + name);
+        //     alert("Hello World" + name);
+        //     return name;
+        // }
+        // ans("king ");
+
+
+        let greet = (name) => {
+            return "hello" + name;
+        };
+        // console.log(greet("king "));
+
+        document.getElementById("demo").style.color = "blue";
+        document.getElementById("demo1").style.color = "green";
+        // dom part
+        document.getElementById("demo").innerHTML = "Hello JavaScript!";
+
+        let element = document.getElementById("demo");
+        // console.log(element.innerHTML);
+
+        let elements = document.getElementsByClassName("text");
+        // console.log(elements[0].innerHTML);
+
+
+        function ChangeContent() {
+            document.querySelector("a").href = "www.heet18.vercel.app";
+            document.getElementById("demo").innerHTML = "Content Changed!";
+            document.getElementById("demo").style.color = "red";
+            document.getElementById("demo").style.backgroundColor = "yellow";
+        }
+
+        // document.getElementById("btn").onclick = function ChangeContent() {
+
+        //     document.getElementById("img").src = "../Dom model/cspit.jpeg";
+        //     btn.addEventListener('click', function () {
+        //         // document.getElementById("demo").innerHTML = "Content Changed!";
+        //         document.getElementById("demo").style.color = "red";
+        //         document.getElementById("demo").style.backgroundColor = "yellow";
+        //         document.getElementById("demo").textContent = "Content Changed!";
+
+        //         // setTimeout(() => {
+        //         //     btn.removeEventListener("click", ChangeContent);
+        //         // }, 1);   // this is for the timeout of the button command 
+        //     });
+        // };
+
+        // console.log("hello");
+        // console.log(0 == false);
+
+
+
+        // let object = { name: "HEET" };
+        // let object2 = object;
+        // object2.name = "KING";
+        // console.log(object.name);
+
+        // console.log(object2.name.toUpperCase());
+
+        // let num1 = 12.345;
+        // console.log(num1.toFixed(1));
+
+
+
+
+        // let str1 = "Hello World";
+        // console.log(str1.length);
+        // console.log(str1.toUpperCase());
+        // console.log(str1.slice(1, 5));
+        // console.log(10>"5");
+
+
+        let user = { name: "Heet", age: 20 };
+        let userStr = JSON.stringify(user);
+        console.log(userStr);
+        let obj = JSON.parse(userStr);
+        console.log(obj.name);
+
+
+
+
+        let list = function () {
+            let li = document.createElement("li");
+            li.textContent = document.getElementById("myInput").value;
+            document.getElementById("myList").appendChild(li);
+            document.getElementById("myInput").value = "";
+        }
+        let deleteList = function () {
+            let list = document.getElementById("myList");
+            list.removeChild(list.lastElementChild);
+            strikethrough(list.lastElementChild);
+        }
+
+        function regex() {
+            var regex = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/";
+            var str = document.getElementById("user").value;
+            if (str.match(regex)) {
+                alert("Valid");
+            } else {
+                alert("Invalid");
+            }
+        }
+
+            function toggleFAQ(id) {
+                var el = document.getElementById(id);
+                if (el.style.display === "none" || el.style.display === "") {
+                    el.style.display = "block";
+                } else {
+                    el.style.display = "none";
+                }
+            }
+    </script>
+</body>
+</html>

@@ -1,81 +1,356 @@
-# Dependency folders
+# ============================================# ============================================# Dependency folders
+
+# Dependencies
+
+# ============================================# Dependenciesnode_modules/
+
 node_modules/
-vendor/
 
-# Environment variables
+vendor/# ============================================vendor/
+
+bower_components/
+
+jspm_packages/node_modules/
+
+
+
+# ============================================vendor/# Environment variables
+
+# Environment Variables & Secrets
+
+# ============================================bower_components/.env
+
 .env
-*.env
-*.env.*
 
-# Build output
-dist/
+.env.*jspm_packages/*.env
+
+!.env.example
+
+*.local*.env.*
+
+config.php
+
+db.php# ============================================
+
+*.key
+
+*.pem# Environment Variables & Secrets# Build output
+
+users.txt
+
+# ============================================dist/
+
+# ============================================
+
+# Build Output & Distribution.envbuild/
+
+# ============================================
+
+dist/.env.*
+
 build/
 
-# IDE files
-.vscode/
-.idea/
+out/!.env.example# IDE files
 
-# Logs
-logs/
+.next/
+
+.nuxt/*.local.vscode/
+
+*.bundle.js
+
+*.bundle.cssconfig.php.idea/
+
+
+
+# ============================================db.php
+
+# IDE & Editor Settings
+
+# ============================================*.key# Logs
+
+.vscode/
+
+.idea/*.pemlogs/
+
+*.sublime-project
+
+*.sublime-workspaceusers.txt*.log
+
+*.code-workspace
+
+
+
+# ============================================
+
+# Logs & Databases# ============================================# OS generated files
+
+# ============================================
+
+logs/# Build Output & Distribution.DS_Store
+
 *.log
 
-# OS generated files
+npm-debug.log*# ============================================Thumbs.db
+
+yarn-debug.log*
+
+yarn-error.log*dist/
+
+lerna-debug.log*
+
+*.dbbuild/# PHP specific
+
+*.sqlite
+
+*.sqlite3out/vendor/
+
+
+
+# ============================================.next/*.log
+
+# OS Generated Files
+
+# ============================================.nuxt/*.cache
+
 .DS_Store
+
+.DS_Store?*.bundle.js*.tmp
+
+._*
+
+.Spotlight-V100*.bundle.css
+
+.Trashes
+
+ehthumbs.db# Ignore composer lock file if not needed
+
 Thumbs.db
 
-# PHP specific
-vendor/
-*.log
+Desktop.ini# ============================================composer.lock
+
+
+
+# ============================================# IDE & Editor Settings
+
+# Python
+
+# ============================================# ============================================# Ignore user data and sensitive files
+
+__pycache__/
+
+*.py[cod].vscode/
+
+*$py.class
+
+*.so.idea/# Python virtual environments
+
+venv/
+
+venv310/*.sublime-projectvenv/
+
+ENV/
+
+env/*.sublime-workspacevenv310/
+
+.Python
+
+pip-log.txt*.code-workspace
+
+
+
+# ============================================# User data and secrets
+
+# PHP
+
+# ============================================# ============================================users.txt
+
 *.cache
+
+composer.lock# Logs & Databases*.env
+
+*.phar
+
+# ============================================*.db
+
+# ============================================
+
+# Compiled Fileslogs/*.sqlite
+
+# ============================================
+
+*.class*.log*.log
+
+*.exe
+
+*.dllnpm-debug.log*
+
+*.o
+
+*.dylibyarn-debug.log*# Python cache
+
+
+
+# ============================================yarn-error.log*__pycache__/
+
+# Temporary & Backup Files
+
+# ============================================lerna-debug.log**.pyc
+
 *.tmp
 
-# Ignore composer lock file if not needed
-composer.lock
+*.temp*.db
 
-# Ignore user data and sensitive files
+*.bak
 
-# Python virtual environments
-venv/
-venv310/
+*.swp*.sqlite# IDE and editor settings
 
-# User data and secrets
-users.txt
-*.env
-*.db
-*.sqlite
-*.log
+*.swo
 
-# Python cache
-__pycache__/
-*.pyc
+*~*.sqlite3.vscode/
 
-# IDE and editor settings
-.vscode/
+.#*
+
 .idea/
 
-# Ignore PHP config and secret files
-config.php
-db.php
-*.key
-*.pem
+# ============================================
 
-# Ignore compiled files
+# Media Files (Large/Uploaded)# ============================================
+
+# ============================================
+
+# Uncomment if you don't want to track media# OS Generated Files# Ignore PHP config and secret files
+
+# *.mp4
+
+# *.avi# ============================================config.php
+
+# *.mov
+
+# *.wmv.DS_Storedb.php
+
+# uploads/
+
+# media/.DS_Store?*.key
+
+
+
+# ============================================._**.pem
+
+# Testing & Coverage
+
+# ============================================.Spotlight-V100
+
+coverage/
+
+.nyc_output/.Trashes# Ignore compiled files
+
+*.lcov
+
+.pytest_cache/ehthumbs.db*.class
+
+
+
+# ============================================Thumbs.db*.exe
+
+# Miscellaneous
+
+# ============================================Desktop.ini*.dll
+
+*.orig
+
+.sass-cache/*.o
+
+*.css.map
+
+*.js.map# ============================================*.so
+
+package-lock.json
+
+yarn.lock# Python
+
+.pnp.*
+
+.yarn/# ============================================# Ignore backup files
+
+
+__pycache__/*.bak
+
+*.py[cod]*.tmp
+
+*$py.class*.swp
+
+*.so
+
+venv/# Ignore media uploads (if any)
+
+venv310/*.mp4
+
+ENV/*.jpg
+
+env/*.jpeg
+
+.Python*.png
+
+pip-log.txt*.gif
+
+
+
+# ============================================# Ignore any other sensitive or temporary files
+
+# PHP
+# ============================================
+*.cache
+composer.lock
+*.phar
+
+# ============================================
+# Compiled Files
+# ============================================
 *.class
 *.exe
 *.dll
 *.o
 *.so
+*.dylib
 
-# Ignore backup files
-*.bak
+# ============================================
+# Temporary & Backup Files
+# ============================================
 *.tmp
+*.temp
+*.bak
 *.swp
+*.swo
+*~
+.#*
 
-# Ignore media uploads (if any)
-*.mp4
-*.jpg
-*.jpeg
-*.png
-*.gif
+# ============================================
+# Media Files (Large/Uploaded)
+# ============================================
+# Uncomment if you don't want to track media
+# *.mp4
+# *.avi
+# *.mov
+# *.wmv
+# uploads/
+# media/
 
-# Ignore any other sensitive or temporary files
+# ============================================
+# Testing & Coverage
+# ============================================
+coverage/
+.nyc_output/
+*.lcov
+.pytest_cache/
+
+# ============================================
+# Miscellaneous
+# ============================================
+*.orig
+.sass-cache/
+*.css.map
+*.js.map
+package-lock.json
+yarn.lock
+.pnp.*
+.yarn/

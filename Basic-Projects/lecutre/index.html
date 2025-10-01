@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to the Lecture Page</h1>
+    
+    <ul id="u1"></ul>
+
+    <script>
+        // Product array
+        const product = [
+            { id: 101, name: 'Iphone', quantity: 100, price: 80000 },
+            { id: 102, name: 'Iphone 13 pro', quantity: 10, price: 8000 },
+            { id: 103, name: 'Iphone 15 pro', quantity: 10, price: 8000 },
+            { id: 104, name: 'Iphone 16 pro', quantity: 10, price: 8000 }
+        ];
+
+        // JSON string (must be in string format for JSON.parse)
+        const jsonText = `
+        {
+          "students": [
+            {
+              "id": 1,
+              "name": "Aarav Shah",
+              "age": 20,
+              "gender": "Male",
+              "course": "Computer Science",
+              "year": 2,
+              "grades": {
+                "math": 85,
+                "programming": 90,
+                "networking": 78
+              },
+              "contact": {
+                "email": "aarav.shah@example.com",
+                "phone": "+91-9876543210"
+              }
+            },
+            {
+              "id": 2,
+              "name": "Riya Patel",
+              "age": 21,
+              "gender": "Female",
+              "course": "Electronics Engineering",
+              "year": 3,
+              "grades": {
+                "circuit_theory": 88,
+                "digital_systems": 92,
+                "signals": 80
+              },
+              "contact": {
+                "email": "riya.patel@example.com",
+                "phone": "+91-9123456789"
+              }
+            },
+            {
+              "id": 3,
+              "name": "Karan Mehta",
+              "age": 22,
+              "gender": "Male",
+              "course": "Mechanical Engineering",
+              "year": 4,
+              "grades": {
+                "thermodynamics": 76,
+                "fluid_mechanics": 82,
+                "machine_design": 89
+              },
+              "contact": {
+                "email": "karan.mehta@example.com",
+                "phone": "+91-9988776655"
+              }
+            },
+            {
+              "id": 4,
+              "name": "Neha Desai",
+              "age": 19,
+              "gender": "Female",
+              "course": "Information Technology",
+              "year": 1,
+              "grades": {
+                "web_development": 95,
+                "database": 87,
+                "python": 92
+              },
+              "contact": {
+                "email": "neha.desai@example.com",
+                "phone": "+91-9090909090"
+              }
+            }
+          ]
+        }`;
+
+        // Parse JSON string into JS object
+        const moreEvents = JSON.parse(jsonText);
+        console.log("Students Data:", moreEvents);
+
+        // Traverse and display products
+        product.forEach(e => {
+            let li = document.createElement("li");
+            li.textContent = `Product ID: ${e.id}, Name: ${e.name}, Quantity: ${e.quantity}, Price: ${e.price}`;
+            document.getElementById("u1").appendChild(li);
+        });
+    </script>
+</body>
+</html>
