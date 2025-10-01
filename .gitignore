@@ -1,99 +1,338 @@
-# ============================================
-# Dependencies
-# ============================================
-node_modules/
-vendor/
-bower_components/
-jspm_packages/
+# ============================================# ============================================
 
-# ============================================
-# Environment Variables & Secrets
-# ============================================
+# Dependencies & Package Managers# Dependencies
+
+# ============================================# ============================================
+
+node_modules/node_modules/
+
+vendor/vendor/
+
+bower_components/bower_components/
+
+jspm_packages/jspm_packages/
+
+package-lock.json
+
+yarn.lock# ============================================
+
+composer.lock# Environment Variables & Secrets
+
+pnpm-lock.yaml# ============================================
+
 .env
-.env.*
-!.env.example
-*.local
+
+# ============================================.env.*
+
+# Environment Variables & Secrets!.env.example
+
+# ============================================*.local
+
+.envconfig.php
+
+.env.*db.php
+
+!.env.example*.key
+
+!.env.template*.pem
+
+*.localusers.txt
+
 config.php
-db.php
-*.key
-*.pem
-users.txt
 
-# ============================================
-# Build Output & Distribution
-# ============================================
-dist/
-build/
-out/
-.next/
-.nuxt/
-*.bundle.js
-*.bundle.css
+db.php# ============================================
 
-# ============================================
+database.php# Build Output & Distribution
+
+connection.php# ============================================
+
+*.keydist/
+
+*.pembuild/
+
+*.p12out/
+
+*.pfx.next/
+
+*.cer.nuxt/
+
+*.crt*.bundle.js
+
+users.txt*.bundle.css
+
+passwords.txt
+
+secrets.json# ============================================
+
 # IDE & Editor Settings
-# ============================================
-.vscode/
-.idea/
-*.sublime-project
-*.sublime-workspace
-*.code-workspace
 
-# ============================================
-# Logs & Databases
-# ============================================
-logs/
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# ============================================# ============================================
+
+# Build Output & Distribution.vscode/
+
+# ============================================.idea/
+
+dist/*.sublime-project
+
+build/*.sublime-workspace
+
+out/*.code-workspace
+
+.next/
+
+.nuxt/# ============================================
+
+.output/# Logs & Databases
+
+.vercel/# ============================================
+
+.netlify/logs/
+
+*.bundle.js*.log
+
+*.bundle.cssnpm-debug.log*
+
+*.bundle.js.mapyarn-debug.log*
+
+*.bundle.css.mapyarn-error.log*
+
 lerna-debug.log*
-*.db
-*.sqlite
-*.sqlite3
 
-# ============================================
-# OS Generated Files
-# ============================================
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-Desktop.ini
+# ============================================*.db
 
-# ============================================
-# Python
-# ============================================
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-venv/
-venv310/
-ENV/
-env/
-.Python
-pip-log.txt
+# IDE & Editor Settings*.sqlite
+
+# ============================================*.sqlite3
+
+.vscode/
+
+.idea/# ============================================
+
+*.sublime-project# OS Generated Files
+
+*.sublime-workspace# ============================================
+
+*.code-workspace.DS_Store
+
+.project.DS_Store?
+
+.classpath._*
+
+.settings/.Spotlight-V100
+
+*.swp.Trashes
+
+*.swoehthumbs.db
+
+*~Thumbs.db
+
+.history/Desktop.ini
+
+
+
+# ============================================# ============================================
+
+# Logs & Debugging# Python
+
+# ============================================# ============================================
+
+logs/__pycache__/
+
+*.log*.py[cod]
+
+npm-debug.log**$py.class
+
+yarn-debug.log**.so
+
+yarn-error.log*venv/
+
+lerna-debug.log*venv310/
+
+pnpm-debug.log*ENV/
+
+debug.logenv/
+
+error.log.Python
+
+combined.logpip-log.txt
+
 *.pyc
 
 # ============================================
-# PHP
-# ============================================
-*.cache
-composer.lock
-*.phar
+
+# Databases# ============================================
+
+# ============================================# PHP
+
+*.db# ============================================
+
+*.sqlite*.cache
+
+*.sqlite3composer.lock
+
+*.db-shm*.phar
+
+*.db-wal
+
+*.mdb# ============================================
+
+*.accdb# Compiled Files
+
+*.sql# ============================================
+
+*.class
+
+# ============================================*.exe
+
+# OS Generated Files*.dll
+
+# ============================================*.o
+
+.DS_Store*.dylib
+
+.DS_Store?
+
+._*# ============================================
+
+.Spotlight-V100# Temporary & Backup Files
+
+.Trashes# ============================================
+
+ehthumbs.db*.tmp
+
+Thumbs.db*.temp
+
+Desktop.ini*.bak
+
+$RECYCLE.BIN/*.swp
+
+*.cab*.swo
+
+*.msi*~
+
+*.msix.#*
+
+*.msm
+
+*.msp# ============================================
+
+# Media Files (Large/Uploaded)
+
+# ============================================# ============================================
+
+# Python# Uncomment if you don't want to track media
+
+# ============================================# *.mp4
+
+__pycache__/# *.avi
+
+*.py[cod]# *.mov
+
+*$py.class# *.wmv
+
+*.so# *.jpg
+
+*.egg# *.jpeg
+
+*.egg-info/# *.png
+
+dist/# *.gif
+
+build/# uploads/
+
+.Python# media/
+
+pip-log.txt
+
+pip-delete-this-directory.txt# ============================================
+
+.tox/# Testing & Coverage
+
+.coverage# ============================================
+
+.coverage.*coverage/
+
+.cache.nyc_output/
+
+nosetests.xml*.lcov
+
+coverage.xml.pytest_cache/
+
+*.cover
+
+.hypothesis/# ============================================
+
+.pytest_cache/# Miscellaneous
+
+*.pyc# ============================================
+
+*.pyo*.orig
+
+*.pyd.sass-cache/
+
+*.css.map
+
+# Python Virtual Environments*.js.map
+
+venv/package-lock.json
+
+venv310/yarn.lock
+
+ENV/.pnp.*
+
+env/.yarn/
+
+virtualenv/
+
+.venv/# ============================================
+
+pipenv/# Project Specific
+
+poetry.lock# ============================================
+
+signinsignup/venv310/
+
+# ============================================signinsignup/.rasa/cache/
+
+# PHP.rasa/
 
 # ============================================
-# Compiled Files
+*.cache
+composer.phar
+/vendor/
+phpunit.xml
+phpunit.result.cache
+.phpunit.result.cache
+
+# ============================================
+# Java
 # ============================================
 *.class
+*.jar
+*.war
+*.ear
+*.nar
+target/
+.gradle/
+build/
+.classpath
+.project
+
+# ============================================
+# Compiled & Binary Files
+# ============================================
 *.exe
 *.dll
 *.o
+*.obj
 *.dylib
+*.lib
+*.a
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
 
 # ============================================
 # Temporary & Backup Files
@@ -101,25 +340,40 @@ composer.lock
 *.tmp
 *.temp
 *.bak
+*.backup
+*.old
+*.orig
 *.swp
 *.swo
 *~
 .#*
+\#*#
+.*.swp
+
+# ============================================
+# Archives
+# ============================================
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+*.iso
+*.dmg
 
 # ============================================
 # Media Files (Large/Uploaded)
 # ============================================
-# Uncomment if you don't want to track media
+# Uncomment if you don't want to track media files
 # *.mp4
 # *.avi
 # *.mov
 # *.wmv
-# *.jpg
-# *.jpeg
-# *.png
-# *.gif
+# *.flv
+# *.mkv
 # uploads/
 # media/
+# videos/
 
 # ============================================
 # Testing & Coverage
@@ -128,22 +382,93 @@ coverage/
 .nyc_output/
 *.lcov
 .pytest_cache/
+test-results/
+junit.xml
+test-report.html
+
+# ============================================
+# Documentation
+# ============================================
+docs/_build/
+site/
+.docusaurus/
+
+# ============================================
+# Cache Directories
+# ============================================
+.cache/
+.parcel-cache/
+.sass-cache/
+.npm/
+.eslintcache
+.stylelintcache
+*.tsbuildinfo
 
 # ============================================
 # Miscellaneous
 # ============================================
-*.orig
-.sass-cache/
 *.css.map
 *.js.map
-package-lock.json
-yarn.lock
 .pnp.*
 .yarn/
+.pnp/
+.pnp.js
+npm-error.log
 
 # ============================================
-# Project Specific
+# Framework Specific
+# ============================================
+
+# React / Next.js
+.next/
+out/
+.vercel
+
+# Vue / Nuxt
+.nuxt/
+.output/
+
+# Angular
+.angular/
+dist/
+
+# Vite
+dist-ssr/
+*.local
+
+# ============================================
+# Project Specific - WDF
 # ============================================
 signinsignup/venv310/
 signinsignup/.rasa/cache/
+signinsignup/backend/.env
+signinsignup/node_modules/
+signinsignup/actions/__pycache__/
 .rasa/
+PHP Class/config.php
+Portfolio-3D/node_modules/
+
+# ============================================
+# AI & Machine Learning
+# ============================================
+*.h5
+*.pkl
+*.pickle
+*.model
+*.ckpt
+checkpoints/
+models/
+*.pb
+*.pth
+*.weights
+
+# ============================================
+# Sensitive Data
+# ============================================
+**/secrets/
+**/credentials/
+**/private/
+*.credentials
+*.token
+access_token.txt
+refresh_token.txt
