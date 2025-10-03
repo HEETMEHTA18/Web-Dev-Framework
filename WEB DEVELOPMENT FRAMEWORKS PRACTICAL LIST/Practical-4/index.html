@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      background: #003366;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    h2 {
+      color: #003366;
+      margin-top: 30px;
+    }
+
+    .section {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .faq-question {
+      cursor: pointer;
+      font-weight: bold;
+      margin: 15px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .faq-question:hover {
+      background: #ddd;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out, padding 0.3s;
+      background: #fafafa;
+      padding: 0 10px;
+      border-left: 3px solid #003366;
+      border-radius: 4px;
+    }
+    .faq-answer.open {
+      max-height: 200px;
+      padding: 10px;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      animation: fadeIn 0.3s;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    .modal {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transform: scale(0.8);
+      transition: transform 0.3s;
+    }
+    .modal-overlay.show .modal {
+      transform: scale(1);
+    }
+
+    .slider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .slider img {
+      height: 180px;
+      width: 180px;
+      border: 3px solid #ccc;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+    .slider img:hover {
+      transform: scale(1.05);
+    }
+    .nav-buttons {
+      margin-top: 10px;
+      text-align: center;
+    }
+    .indicators {
+      margin-top: 10px;
+      text-align: center;
+    }
+    .dot {
+      display: inline-block;
+      height: 12px;
+      width: 12px;
+      margin: 0 4px;
+      background: #ccc;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .dot.active {
+      background: #003366;
+    }
+
+    button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background: #003366;
+      color: white;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #0055aa;
+    }
+
+    .dark-mode {
+      background: #121212;
+      color: white;
+    }
+    .dark-mode .section {
+      background: #1e1e1e;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to  Portal</h1>
+    <nav>
+      <a href="#faq">FAQ</a>
+      <a href="#popup">Popup</a>
+      <a href="#gallery">Gallery</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <button onclick="changemode()" id="modeBtn"> Dark Mode</button>
+
+    <h2>Interactive Slider</h2>
+    <input type="range" min="0" max="100" value="50" class="slider" 
+           oninput="updateValue(this.value)" id="myRange">
+    <p>This is the Updated Value: <span id="slider">50</span></p>
+
+    <div class="section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-question">What is this portal for? <span>+</span></div>
+      <div class="faq-answer">This portal helps users navigate our services.</div>
+
+      <div class="faq-question">How do I register? <span>+</span></div>
+      <div class="faq-answer">You can register by clicking the signup button on the homepage.</div>
+    </div>
+
+    <div class="section" id="popup">
+      <h2>Popup Example</h2>
+      <button onclick="openPopup()">Open Info Popup</button>
+    </div>
+
+    <div class="modal-overlay" id="popupOverlay">
+      <div class="modal">
+        <h3>Important Announcement</h3>
+        <p>This is a sample information popup. Stay tuned for more updates!</p>
+        <button onclick="closePopup()">Close</button>
+      </div>
+    </div>
+
+    <div class="section" id="gallery">
+      <h2>Image Gallery</h2>
+      <div class="slider">
+        <img id="gallery-image" src="../cspit.jpeg" alt="Gallery Image">
+      </div>
+      <div class="nav-buttons">
+        <button onclick="prevImage()">Prev</button>
+        <button onclick="nextImage()">Next</button>
+      </div>
+      <div class="indicators" id="indicators"></div>
+    </div>
+  </div>
+
+  <script>
+    function updateValue(value) {
+      document.getElementById("slider").textContent = value;
+      document.getElementById("myRange").value = value;
+    }
+
+    const questions = document.querySelectorAll('.faq-question');
+    questions.forEach(q => {
+      q.addEventListener('click', () => {
+        const answer = q.nextElementSibling;
+        const symbol = q.querySelector('span');
+        answer.classList.toggle('open');
+        symbol.textContent = answer.classList.contains('open') ? '-' : '+';
+      });
+    });
+
+    function changemode() {
+      const body = document.body;
+      body.classList.toggle('dark-mode');
+      const btn = document.getElementById('modeBtn');
+      if (body.classList.contains('dark-mode')) {
+        btn.textContent = "☀️ Light Mode";
+      } else {
+        btn.textContent = "🌙 Dark Mode";
+      }
+    }
+
+    function openPopup() {
+      document.getElementById('popupOverlay').style.display = 'flex';
+      document.getElementById('popupOverlay').classList.add('show');
+    }
+    function closePopup() {
+      document.getElementById('popupOverlay').style.display = 'none';
+      document.getElementById('popupOverlay').classList.remove('show');
+    }
+
+    const imageNames = [
+      'cspit.jpeg',
+      'i2im.jpeg', 
+      'cmpics.jpeg'
+    ];
+
+    const candidateDirs = [
+      './',
+      '',
+      'parctical4_1/',
+      './parctical4_1/',
+      '../parctical4_1/',
+      '../Practical-4/parctical4_1/',
+      '../Practical-4/',
+      '../'
+    ];
+
+    const indicatorsContainer = document.getElementById('indicators');
+    const imgElement = document.getElementById('gallery-image');
+    let images = [];
+    let currentIndex = 0;
+
+    function imageExists(url) {
+      return new Promise(resolve => {
+        const img = new Image();
+        img.onload = () => resolve(true);
+        img.onerror = () => resolve(false);
+        img.src = url;
+      });
+    }
+
+    async function findImagePath(name) {
+      for (const dir of candidateDirs) {
+        const tryUrl = dir + name;
+        if (await imageExists(tryUrl)) return tryUrl;
+      }
+      return name;
+    }
+
+    function renderIndicators() {
+      indicatorsContainer.innerHTML = '';
+      images.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        if (i === currentIndex) dot.classList.add('active');
+        dot.onclick = () => { currentIndex = i; showImage(currentIndex); };
+        indicatorsContainer.appendChild(dot);
+      });
+    }
+
+    function showImage(index) {
+      if (!images.length) return;
+      currentIndex = ((index % images.length) + images.length) % images.length;
+      imgElement.src = images[currentIndex];
+      renderIndicators();
+    }
+
+    function prevImage() {
+      showImage(currentIndex - 1);
+    }
+    function nextImage() {
+      showImage(currentIndex + 1);
+    }
+
+    (async function initGallery() {
+      const resolved = await Promise.all(imageNames.map(n => findImagePath(n)));
+      images = resolved.filter(Boolean);
+      if (images.length === 0) {
+        imgElement.alt = 'No gallery images found. Place images in this folder or parctical4_1.';
+        indicatorsContainer.innerHTML = '<p style="color:#666">No images found</p>';
+        return;
+      }
+      showImage(0);
+    })();
+  </script>
+</body>
+</html>

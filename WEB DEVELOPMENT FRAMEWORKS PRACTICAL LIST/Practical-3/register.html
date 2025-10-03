@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration - StudentHub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .registration-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .form-header h1 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-header p {
+            color: #666;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+            font-weight: 500;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .password-strength {
+            margin-top: 5px;
+            height: 4px;
+            background: #e1e5e9;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .strength-bar {
+            height: 100%;
+            width: 0%;
+            transition: all 0.3s ease;
+        }
+
+        .strength-weak { background: #ff6b6b; width: 33%; }
+        .strength-medium { background: #feca57; width: 66%; }
+        .strength-strong { background: #48dbfb; width: 100%; }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #666;
+        }
+
+        .login-link a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        @media (max-width: 480px) {
+            .registration-container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="registration-container">
+        <div class="form-header">
+            <h1>Join StudentHub</h1>
+            <p>Create your account to get started</p>
+        </div>
+
+        <form id="registrationForm" novalidate>
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required>
+                <div class="error-message" id="fullNameError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+                <div class="error-message" id="emailError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="studentId">Student ID</label>
+                <input type="text" id="studentId" name="studentId" pattern="[0-9]{8}" required>
+                <div class="error-message" id="studentIdError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="course">Course</label>
+                <select id="course" name="course" required>
+                    <option value="">Select your course</option>
+                    <option value="BCA">Bachelor of Computer Applications</option>
+                    <option value="BSc-IT">B.Sc Information Technology</option>
+                    <option value="BSc-CS">B.Sc Computer Science</option>
+                    <option value="MCA">Master of Computer Applications</option>
+                </select>
+                <div class="error-message" id="courseError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="year">Academic Year</label>
+                <select id="year" name="year" required>
+                    <option value="">Select year</option>
+                    <option value="1">First Year</option>
+                    <option value="2">Second Year</option>
+                    <option value="3">Third Year</option>
+                </select>
+                <div class="error-message" id="yearError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <div class="password-strength">
+                    <div class="strength-bar" id="strengthBar"></div>
+                </div>
+                <div class="error-message" id="passwordError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <div class="error-message" id="confirmPasswordError"></div>
+            </div>
+
+            <button type="submit" class="submit-btn">Create Account</button>
+        </form>
+
+        <div class="login-link">
+            Already have an account? <a href="login.html">Sign in here</a>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('registrationForm');
+        const strengthBar = document.getElementById('strengthBar');
+
+        function showError(fieldId, message) {
+            const errorElement = document.getElementById(fieldId + 'Error');
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+            document.getElementById(fieldId).style.borderColor = '#e74c3c';
+        }
+
+        function hideError(fieldId) {
+            const errorElement = document.getElementById(fieldId + 'Error');
+            errorElement.style.display = 'none';
+            document.getElementById(fieldId).style.borderColor = '#e1e5e9';
+        }
+
+        function validateFullName() {
+            const fullName = document.getElementById('fullName').value.trim();
+            if (fullName.length < 2) {
+                showError('fullName', 'Full name must be at least 2 characters long');
+                return false;
+            }
+            hideError('fullName');
+            return true;
+        }
+
+        function validateEmail() {
+            const email = document.getElementById('email').value;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                showError('email', 'Please enter a valid email address');
+                return false;
+            }
+            hideError('email');
+            return true;
+        }
+
+        function validateStudentId() {
+            const studentId = document.getElementById('studentId').value;
+            if (!/^\d{8}$/.test(studentId)) {
+                showError('studentId', 'Student ID must be exactly 8 digits');
+                return false;
+            }
+            hideError('studentId');
+            return true;
+        }
+
+        function validateCourse() {
+            const course = document.getElementById('course').value;
+            if (!course) {
+                showError('course', 'Please select your course');
+                return false;
+            }
+            hideError('course');
+            return true;
+        }
+
+        function validateYear() {
+            const year = document.getElementById('year').value;
+            if (!year) {
+                showError('year', 'Please select your academic year');
+                return false;
+            }
+            hideError('year');
+            return true;
+        }
+
+        function checkPasswordStrength(password) {
+            let strength = 0;
+            if (password.length >= 8) strength++;
+            if (/[a-z]/.test(password)) strength++;
+            if (/[A-Z]/.test(password)) strength++;
+            if (/[0-9]/.test(password)) strength++;
+            if (/[^A-Za-z0-9]/.test(password)) strength++;
+
+            if (strength < 3) {
+                strengthBar.className = 'strength-bar strength-weak';
+                return 'weak';
+            } else if (strength < 4) {
+                strengthBar.className = 'strength-bar strength-medium';
+                return 'medium';
+            } else {
+                strengthBar.className = 'strength-bar strength-strong';
+                return 'strong';
+            }
+        }
+
+        function validatePassword() {
+            const password = document.getElementById('password').value;
+            if (password.length < 8) {
+                showError('password', 'Password must be at least 8 characters long');
+                return false;
+            }
+            
+            const strength = checkPasswordStrength(password);
+            if (strength === 'weak') {
+                showError('password', 'Password is too weak. Include uppercase, lowercase, numbers, and symbols');
+                return false;
+            }
+            
+            hideError('password');
+            return true;
+        }
+
+        function validateConfirmPassword() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            if (password !== confirmPassword) {
+                showError('confirmPassword', 'Passwords do not match');
+                return false;
+            }
+            hideError('confirmPassword');
+            return true;
+        }
+
+        document.getElementById('fullName').addEventListener('blur', validateFullName);
+        document.getElementById('email').addEventListener('blur', validateEmail);
+        document.getElementById('studentId').addEventListener('blur', validateStudentId);
+        document.getElementById('course').addEventListener('change', validateCourse);
+        document.getElementById('year').addEventListener('change', validateYear);
+        document.getElementById('password').addEventListener('input', function() {
+            checkPasswordStrength(this.value);
+        });
+        document.getElementById('password').addEventListener('blur', validatePassword);
+        document.getElementById('confirmPassword').addEventListener('blur', validateConfirmPassword);
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const isValidName = validateFullName();
+            const isValidEmail = validateEmail();
+            const isValidStudentId = validateStudentId();
+            const isValidCourse = validateCourse();
+            const isValidYear = validateYear();
+            const isValidPassword = validatePassword();
+            const isValidConfirmPassword = validateConfirmPassword();
+
+            if (isValidName && isValidEmail && isValidStudentId && isValidCourse && 
+                isValidYear && isValidPassword && isValidConfirmPassword) {
+                alert('Registration successful! Welcome to StudentHub.');
+                form.reset();
+                strengthBar.className = 'strength-bar';
+            }
+        });
+    </script>
+</body>
+</html>

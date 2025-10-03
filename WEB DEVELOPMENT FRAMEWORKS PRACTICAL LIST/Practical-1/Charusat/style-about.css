@@ -1,0 +1,142 @@
+/* General reset and font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* Main section container */
+.section {
+    width: 100%;
+    min-height: 100vh;
+    padding: 50px 10%;
+    background: linear-gradient(135deg, #ffffff, #e6f0ff);
+}
+
+/* Inner container layout */
+.containor {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Content section */
+.content-section {
+    flex: 1 1 500px;
+    padding: 20px;
+}
+
+.content-section .title h1 {
+    font-size: 40px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.content-section .title h1::after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 50px;
+    background-color: #3498db;
+    left: 0;
+    bottom: -10px;
+}
+
+.content-section .content h3 {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+.content-section p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Read more button */
+.button a {
+    text-decoration: none;
+    background-color: #2980b9;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.button a:hover {
+    background-color: #1c5980;
+}
+
+/* Social media icons */
+.social {
+    margin-top: 20px;
+}
+
+.social a {
+    margin-right: 15px;
+    font-size: 20px;
+    color: #2980b9;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social a:hover {
+    transform: scale(1.2);
+    color: #1c5980;
+}
+
+/* Image section */
+.image-section {
+    flex: 1 1 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.image-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+    .containor {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .content-section .title h1::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social a {
+        margin: 10px;
+    }
+}
