@@ -463,7 +463,7 @@ models/
 *.weights
 
 # ============================================
-# Sensitive Data
+# Sensitive Data & Security
 # ============================================
 **/secrets/
 **/credentials/
@@ -472,3 +472,32 @@ models/
 *.token
 access_token.txt
 refresh_token.txt
+
+# PHP files with hardcoded credentials (SECURITY)
+**/login_credentials.php
+**/database_config.php
+**/api_keys.php
+**/user_data.php
+**/hardcoded_*.php
+
+# Any file containing passwords or secrets
+*password*
+*secret*
+*credential*
+*.secret
+*.password
+secrets.json
+credentials.json
+passwords.txt
+users.txt
+auth_config.php
+
+# Temporary credential files
+temp_login.php
+test_credentials.*
+demo_users.*
+
+# Specific practical files with sensitive data
+**/Practical-*/credentials.php
+**/Practical-*/config.php
+**/Practical-*/database.php

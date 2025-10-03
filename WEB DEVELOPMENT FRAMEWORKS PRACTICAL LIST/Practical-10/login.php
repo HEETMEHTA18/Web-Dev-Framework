@@ -1,10 +1,17 @@
 <?php
 session_start();
-$users = [
-    ["username" => "admin", "password" => "admin@123", "role" => "admin"],
-    ["username" => "student1", "password" => "stud123", "role" => "user"],
-    ["username" => "student2", "password" => "pass321", "role" => "user"]
-];
+
+// Load users from external credentials file (not tracked by git)
+$credentialsFile = __DIR__ . '/credentials.php';
+if (file_exists($credentialsFile)) {
+    $users = include $credentialsFile;
+} else {
+    // Fallback - create credentials.php from template
+    $users = [
+        ["username" => "demo", "password" => "demo123", "role" => "user"]
+    ];
+    error_log("Warning: credentials.php not found. Using demo credentials.");
+}
 
 if (isset($_SESSION['username'])) {
     header("Location: dashboard.php");
