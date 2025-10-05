@@ -8,16 +8,27 @@ const eventsJSON = `[
 
 const studentsJSON = `[
   {"id":1, "name":"Alice", "course":"CSE", "year":3},
-  {"id":2, "name":"Bob", "course":"ECE", "year":2},
+  {"id":2, "name":"Bob", "course":"ECE", "year":2}
 ]`;
 
 
-const events = JSON.parse(eventsJSON);
-const students = JSON.parse(studentsJSON);
+let events = [];
+let students = [];
+try {
+  events = JSON.parse(eventsJSON);
+} catch (e) {
+  console.error('Failed to parse events JSON', e);
+}
+try {
+  students = JSON.parse(studentsJSON);
+} catch (e) {
+  console.error('Failed to parse students JSON', e);
+}
 
 
 function renderList(containerId, data, renderFn) {
   const container = document.getElementById(containerId);
+  if (!container) return;
   container.innerHTML = '';
   data.forEach(item => container.innerHTML += renderFn(item));
 }
@@ -61,7 +72,7 @@ window.onload = () => {
     }
   });
 
-  document.getElementById('nextBtn').addEventListener('click', () => {
+  document.getElementById('nextBtn').addEventListener('onclick', () => {
     if ((currentPage * studentsPerPage) < students.length) {
       currentPage++;
       renderStudentsPage(currentPage);
