@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <link rel="stylesheet" href="../login/style.css">
+   <script src = script.js></script>
+   <script>
+    
+// function validate()
+// {
+//     alert("clicked me !! hello ");
+// }
+
+
+
+
+</script>
+
+</head>
+<body>
+    <div class="form">
+            <form >
+                <h1>Login</h1>
+                <h3>Username</h3>
+                
+                <input type="text" placeholder="First name" id ="Username" required>
+                <!-- <br> -->
+                <h3>password</h3>
+                <!-- <br> -->
+                <input type="text" placeholder="password" id ="pass" required>
+                <br>
+
+                <button onclick="validation()">Submit</button>
+
+                
+                <p>If not registered register <a href="../login/index.html">Create Account</a></p>
+            </form>
+            <br>
+            <div class="error-message">
+                <script>
+                    document.querySelector(".error-message").innerHTML = "Invalid username or password";
+                    document.querySelector(".error-message").style.color = "red";
+                </script>
+            </div>
+    </div>
+    <!-- <img src="../login/image copy.png" alt="placeholder"> -->
+</body>
+</html>

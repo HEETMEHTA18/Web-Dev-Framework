@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <script>
+        function addTask() {
+            const taskInput = document.querySelector('input[placeholder="Add a new task"]');
+            const taskList = document.getElementById('taskList');
+            if (taskInput.value.trim() !== "") {
+                const listItem = document.createElement('li');
+                listItem.textContent = taskInput.value;
+                taskList.appendChild(listItem);
+                // taskList.removeChild(listItem);
+                taskInput.value = "";
+            } else {
+                alert("Please enter a task.");
+            }
+        }
+
+
+        function clearTasks() {
+            const listItem = document.createElement('ul');
+            const taskList = document.getElementById('taskList');
+            taskList.removeChild(listItem);
+
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to your Todo List</h1>
+    <p>This is a placeholder for the Todo List application.</p>
+
+    <h3>To Do list :</h3>
+    <input type="text" placeholder="Add a new task">
+    
+    <button onclick="addTask()">Submit</button>
+    <button onclick="clearTasks()">Clear</button>
+    <ul id="taskList">
+
+    </ul>
+    
+</body>
+</html>
