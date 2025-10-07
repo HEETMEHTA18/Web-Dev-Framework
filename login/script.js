@@ -1,4 +1,3 @@
-
 // function validate()
 // {
 //     alert("clicked me !! hello ");
@@ -8,7 +7,7 @@ function validate()
 {
     
     let username = document.getElementById('Username');
-let pass = document.getElementById('pass');
+    let pass = document.getElementById('pass');
     if(username.value.trim()=="" || pass.value.trim()=="")
         alert("tari masi no piko");
 
@@ -18,8 +17,8 @@ let pass = document.getElementById('pass');
 
 function validation()
 {
-
-    event.preventDefault();
+    // addEventListener (event);
+    // event.preventDefault();
     let username = document.getElementById("Username");
     let pass = document.getElementById("pass");
     // if(username.value.trim()=="" || pass.value.trim()=="")
@@ -42,7 +41,18 @@ function validation()
         {
             alert("Please enter valid data");
         }
-       
-
-
 }
+// const data = [
+//     {name:"heet",year:"bca"},
+//     {name :"yagna",year:"mbbs"},
+//     {name :"yagna",age:"10"}
+// ];
+// const container = document.getElementsByClassName("student");
+// addEventListener("load", () => {
+//     data.forEach(stu => {
+//     const p = document.createElement("p");
+//     p.textContent = `${stu.name} -${stu.age} - ${stu.year}`;
+//     if (container[0]) container[0].appendChild(p);
+// });
+// console.log(container);
+// })
