@@ -48,11 +48,10 @@ button
 button:hover
 {
     transform: scaleY(1.05);
-    background-color: lightgreen;
+    background-color: rgb(179, 247, 179);
     cursor: pointer;
 
 }
-
 
 h1
 {
