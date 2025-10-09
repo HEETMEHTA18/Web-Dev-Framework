@@ -9,7 +9,7 @@ function validate()
     let username = document.getElementById('Username');
     let pass = document.getElementById('pass');
     if(username.value.trim()=="" || pass.value.trim()=="")
-        alert("tari masi no piko");
+        {alert("Please enter valid data");}
 
     else 
         {alert("hello "+username.value);}
