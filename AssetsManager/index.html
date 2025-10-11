@@ -42,8 +42,6 @@ const currency = (n) => {
   if (!Number.isFinite(num)) return "₹0";
   return "₹" + num.toLocaleString(undefined, { maximumFractionDigits: 2 });
 };
-
-// Send asset to PHP backend
 function sendAssetToPHP(asset, onSuccess, onError) {
   fetch("phpfiles/add_asset.php", {
     method: "POST",
